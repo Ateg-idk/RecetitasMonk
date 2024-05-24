@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Recetitas Monk</string>
+    <string name="logTxtCorreo">Correo</string>
+    <string name="logTxtClave">Clave</string>
+    <string name="logChkRecordar">Recordar Sesión</string>
+    <string name="logBtnIniciar">Iniciar</string>
+    <string name="logBtnSalir">Salir</string>
+    <string name="logLblRegistrar">Registrate</string>
+    <string name="logLblDerechos">Copy Right Recetitas Monk 2024 </string>
+
+</resources>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".actividades.recetaActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:layout_marginTop="20dp"
+            android:alpha="0.8"
+            android:fontFamily="sans-serif-black"
+            android:text="RECETAS"
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:alpha="0.8"
+            android:fontFamily="sans-serif-black"
+            android:text="Panqueques Revueltos"
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="-70dp"
+            android:src="@drawable/atrass" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="205dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/img_1"
+            android:contentDescription="@null" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Por: Alberto betin Food" />
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="26dp"
+            android:layout_marginLeft="90dp"
+            android:src="@drawable/like" />
+
+
+        <ImageView
+            android:layout_width="38dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="-23dp"
+            android:src="@drawable/compartir" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="-30dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Dificultad: Facil"
+            android:textColor="@android:color/black" />
+
+
+        <ImageView
+            android:layout_width="23dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="-17dp"
+            android:layout_marginLeft="24dp"
+            android:src="@drawable/userr" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="-15dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Duracion: 15 min"
+            android:textColor="@android:color/black" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginLeft="10dp"
+            android:alpha="0.8"
+            android:fontFamily="sans-serif-black"
+            android:text="Ingredientes"
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
+
+        <TextView
+            android:layout_width="225dp"
+            android:layout_height="151dp"
+            android:layout_marginLeft="15dp"
+            android:text="Para hacer huevos revueltos básicos necesitas los siguientes ingredientes:
+               -Huevos: El componente principal. Normalmente se usan 2 a 3 por persona
+               -Sal: Para sazonar al gusto"
+            android:textSize="18dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_marginLeft="10dp"
+            android:alpha="0.8"
+            android:fontFamily="sans-serif-black"
+            android:text="Preparacion"
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
+
+        <TextView
+            android:layout_width="279dp"
+            android:layout_height="167dp"
+            android:layout_marginLeft="15dp"
+            android:text="Para hacer huevos revueltos básicos necesitas los siguientes ingredientes:
+               -Huevos: El componente principal. Normalmente se usan 2 a 3 por persona
+               -Sal: Para sazonar al gusto"
+            android:textSize="18dp" />
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

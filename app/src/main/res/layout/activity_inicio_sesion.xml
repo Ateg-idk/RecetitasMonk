@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".actividades.CargaActivity">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="28dp"
+        android:layout_marginBottom="-20dp"
+        android:id="@+id/card_view"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background"
+            android:orientation="vertical"
+            android:padding="28dp">
+
+
+            <TextView
+                android:id="@+id/txtLogin"
+                android:layout_width="359dp"
+                android:layout_height="53dp"
+                android:fontFamily="sans-serif-black"
+                android:onClick="onTextViewClick"
+                android:text="BIENVENIDO"
+                android:textAlignment="center"
+                android:textColor="#FF6F00"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="12dp" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inpCorreoLogin"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:counterEnabled="true"
+                app:endIconDrawable="@drawable/ic_listo"
+                app:endIconMode="custom"
+                app:helperText="CAMPO OBLIGATORIO"
+                app:hintEnabled="true"
+                app:startIconDrawable="@drawable/ic_usuario">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="8dp"
+                    android:hint="Usuario"
+                    android:inputType="textEmailAddress"
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inpContraseñaLogin"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contraseña"
+                app:counterEnabled="true"
+                app:endIconMode="password_toggle"
+                app:helperText="CAMPO OBLIGATORIO"
+                app:hintEnabled="true"
+                app:startIconDrawable="@drawable/ic_contr">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="8dp"
+                    android:inputType="textPassword"
+                    android:textStyle="bold"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <CheckBox
+                android:id="@+id/logChkRecordar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recordar Contraseña"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnIniciar"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@drawable/btn_azu"
+                android:backgroundTint="#FF6F00"
+                android:onClick="IniciarSesion"
+                android:text="Iniciar Sesión"
+                android:textStyle="bold"
+                app:cornerRadius="32dp" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/txtRegistrarseAhora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:alpha="0.7"
+                android:fontFamily="sans-serif-black"
+                android:text="Registrate ahora"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:alpha="0.7"
+
+                android:text="Redes Sociales"
+                android:textColor="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgFb"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/ic_fb"
+                    android:onClick="abrirUrl"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+                <ImageView
+                    android:id="@+id/imgIg"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/ic_ig"
+                    android:onClick="abrirUrl"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView26"
+        android:layout_width="match_parent"
+        android:layout_height="328dp"
+        android:layout_marginTop="0dp"
+        android:paddingTop="0dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/login" />
+
+</RelativeLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_receta"
+            android:icon="@drawable/nav_new_receta"
+            android:title="Nueva Receta"/>
+        <item
+            android:id="@+id/nav_misRecetas"
+            android:icon="@drawable/nav_mis_recetas"
+            android:title="Mis Recetas"/>
+        <item
+            android:id="@+id/nav_menuSemana"
+            android:icon="@drawable/nav_mis_recetas"
+            android:title="Menu Semana"/>
+        <item
+            android:id="@+id/nav_editarPerfil"
+            android:icon="@drawable/nav_editar_perfil"
+            android:title="Editar Perfil"/>
+        <item
+            android:id="@+id/nav_cerrarSesion"
+            android:icon="@drawable/nav_cerrar_sesion"
+            android:title="Cerrar Sesion"/>
+
+    </group>
+</menu>

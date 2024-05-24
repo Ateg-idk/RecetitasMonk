@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="#AC1C1C"
+        android:backgroundTint="#FF5722"
+        android:gravity="center"
+        android:text="REGISTRO DE USUARIOS"
+        android:textColor="#F6F5F5"
+        android:textSize="24sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/txtnom1"
+                android:layout_width="220dp"
+                android:layout_height="43dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="#FF5722"
+                android:ems="10"
+                android:hint="Nombres"
+                android:inputType="text"
+                tools:ignore="MissingConstraints,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="95dp"
+                tools:layout_editor_absoluteY="76dp" />
+
+            <EditText
+                android:id="@+id/txtapeP"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="#FF5722"
+                android:ems="10"
+                android:hint="Apellido Paterno"
+                android:inputType="text"
+                android:minHeight="48dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="95dp"
+                tools:layout_editor_absoluteY="137dp" />
+
+            <EditText
+                android:id="@+id/txtapeM"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="#FF5722"
+                android:ems="10"
+                android:hint="Apellido Materno"
+                android:inputType="text"
+                tools:ignore="MissingConstraints,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="95dp"
+                tools:layout_editor_absoluteY="195dp" />
+
+            <Spinner
+                android:id="@+id/spTipoDoc"
+                android:layout_width="220dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:fontFamily="sans-serif-black"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="95dp"
+                tools:layout_editor_absoluteY="251dp" />
+
+            <EditText
+                android:id="@+id/txtdni"
+                android:layout_width="220dp"
+                android:layout_height="47dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="#FF5722"
+                android:ems="10"
+                android:hint="Numero de Documento"
+                android:inputType="number"
+                tools:ignore="MissingConstraints,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="95dp"
+                tools:layout_editor_absoluteY="305dp" />
+
+            <RadioGroup
+                android:id="@+id/rbtG"
+                android:layout_width="220dp"
+                android:layout_height="115dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="93dp"
+                tools:layout_editor_absoluteY="367dp">
+
+                <TextView
+                    android:id="@+id/txtGenTra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:gravity="center_horizontal"
+                    android:text="Genero"
+                    android:textColor="#FF5722"
+                    android:textSize="20sp"
+                    tools:ignore="DuplicateIds" />
+
+                <RadioButton
+                    android:id="@+id/rdbM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="#FF5722"
+                    android:text="Másculino"
+                    tools:ignore="DuplicateIds" />
+
+                <RadioButton
+                    android:id="@+id/rdbF"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Femenino"
+                    android:textColor="#FF5722"
+                    tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/txtNumCel"
+                android:layout_width="220dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="#FF5722"
+                android:ems="10"
+                android:hint="Celular"
+                android:inputType="number"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="95dp"
+                tools:layout_editor_absoluteY="494dp" />
+
+            <EditText
+                android:id="@+id/txtEmail"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="#FF5722"
+                android:ems="10"
+                android:hint="Correo Electronico"
+                android:inputType="text"
+                android:minHeight="48dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="95dp"
+                tools:layout_editor_absoluteY="137dp" />
+
+
+            <EditText
+                android:id="@+id/txtContra1"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="#FF5722"
+                android:ems="10"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:minHeight="48dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="95dp"
+                tools:layout_editor_absoluteY="137dp" />
+
+            <Button
+                android:id="@+id/btnRegistrarUsu"
+                android:layout_width="220dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="#FF5722"
+                android:onClick="registrar"
+                android:text="Registrar"
+                app:cornerRadius="0sp"
+                tools:ignore="MissingConstraints,TouchTargetSizeCheck"
+                tools:layout_editor_absoluteX="93dp"
+                tools:layout_editor_absoluteY="1013dp" />
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>
