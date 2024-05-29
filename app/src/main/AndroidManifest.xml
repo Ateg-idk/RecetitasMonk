@@ -13,6 +13,9 @@
         android:theme="@style/Theme.RecetitasMonk"
         tools:targetApi="31">
         <activity
+            android:name=".actividades.menfracActivity"
+            android:exported="false" />
+        <activity
             android:name=".actividades.CrearPublicacionActivity"
             android:exported="false" />
         <activity

@@ -64,12 +64,12 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
         RecetitasMonk rm = new RecetitasMonk(this);
         Hash hash = new Hash();
         clave = recordar == true ? clave : hash.StringToHash(clave,"SHA256").toLowerCase();
-        if (correo.equals("user@monk.com") && clave.equals("8bb0cf6eb9b17d0f7d22b456f121257dc1254e1f01665370476383ea776df414")){
+        if (correo.equals("user") && clave.equals("8bb0cf6eb9b17d0f7d22b456f121257dc1254e1f01665370476383ea776df414")){
             if (chkRecordar.isChecked()){
                 //Guardar credenciales a SQlite
                 rm.agregarUsuario(1,correo,clave);
             }
-            Intent iBienvenida = new Intent(this, CrearPublicacionActivity.class);
+            Intent iBienvenida = new Intent(this, menfracActivity.class);
             iBienvenida.putExtra("nombre ","Fabian");
             startActivity(iBienvenida);
             finish();
