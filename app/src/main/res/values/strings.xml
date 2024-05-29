@@ -7,5 +7,7 @@
     <string name="logBtnSalir">Salir</string>
     <string name="logLblRegistrar">Registrate</string>
     <string name="logLblDerechos">Copy Right Recetitas Monk 2024 </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
