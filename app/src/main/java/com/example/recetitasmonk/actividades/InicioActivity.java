@@ -12,7 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.recetitasmonk.R;
 import com.example.recetitasmonk.clases.Inicio;
 
-public class InicioActivity extends AppCompatActivity implements Inicio {
+public class InicioActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +26,5 @@ public class InicioActivity extends AppCompatActivity implements Inicio {
         });
     }
 
-    @Override
-    public void onClickInicio(int idBoton) {
-        Intent iInicio = new Intent(this, menfracActivity.class );
-        iInicio.putExtra("idBoton", idBoton);
-        startActivity(iInicio);
-        finish();
-    }
+
 }
