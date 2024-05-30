@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.example.recetitasmonk.R;
+import com.example.recetitasmonk.actividades.DrawerBaseActivity;
 import com.example.recetitasmonk.clases.Inicio;
 
 /**
@@ -76,7 +77,7 @@ public class navFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     Activity actActual = getActivity();
-                    ((Inicio)actActual).onClickInicio(REQUEST_BUTTON);
+                    ((DrawerBaseActivity)actActual).onClickInicio(REQUEST_BUTTON);
                 }
             });
 

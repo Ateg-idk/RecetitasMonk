@@ -69,7 +69,7 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
                 //Guardar credenciales a SQlite
                 rm.agregarUsuario(1,correo,clave);
             }
-            Intent iBienvenida = new Intent(this, menfracActivity.class);
+            Intent iBienvenida = new Intent(this, DrawerBaseActivity.class);
             iBienvenida.putExtra("nombre ","Fabian");
             startActivity(iBienvenida);
             finish();
