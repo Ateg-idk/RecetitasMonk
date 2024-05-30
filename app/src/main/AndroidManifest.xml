@@ -35,6 +35,7 @@
         <activity android:name=".actividades.EditarActivity" />
         <activity android:name=".actividades.recetaActivity" />
         <activity android:name=".actividades.InicioActivity" />
+        <activity android:name=".actividades.DrawerBaseActivity" />
     </application>
 
 </manifest>
