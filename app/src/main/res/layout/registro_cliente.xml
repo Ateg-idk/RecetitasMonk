@@ -75,17 +75,6 @@
                 tools:layout_editor_absoluteX="95dp"
                 tools:layout_editor_absoluteY="195dp" />
 
-            <Spinner
-                android:id="@+id/regCboTipoDoc"
-                android:layout_width="220dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="15dp"
-                android:fontFamily="sans-serif-black"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="95dp"
-                tools:layout_editor_absoluteY="251dp" />
-
             <EditText
                 android:id="@+id/txtRegDni"
                 android:layout_width="220dp"
@@ -100,6 +89,17 @@
                 tools:layout_editor_absoluteX="95dp"
                 tools:layout_editor_absoluteY="305dp" />
 
+            <TextView
+                android:id="@+id/txtGenTra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_horizontal"
+                android:text="Genero"
+                android:textColor="#FF5722"
+                android:textSize="20sp"
+                tools:ignore="DuplicateIds" />
+
             <RadioGroup
                 android:id="@+id/regRgrSexo"
                 android:layout_width="220dp"
@@ -109,17 +109,6 @@
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="93dp"
                 tools:layout_editor_absoluteY="367dp">
-
-                <TextView
-                    android:id="@+id/txtGenTra"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
-                    android:gravity="center_horizontal"
-                    android:text="Genero"
-                    android:textColor="#FF5722"
-                    android:textSize="20sp"
-                    tools:ignore="DuplicateIds" />
 
                 <RadioButton
                     android:id="@+id/regRbtMaculino"
