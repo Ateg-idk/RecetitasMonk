@@ -76,7 +76,7 @@
                 tools:layout_editor_absoluteY="195dp" />
 
             <Spinner
-                android:id="@+id/spTipoDoc"
+                android:id="@+id/regCboTipoDoc"
                 android:layout_width="220dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center_horizontal"
@@ -101,7 +101,7 @@
                 tools:layout_editor_absoluteY="305dp" />
 
             <RadioGroup
-                android:id="@+id/rbtG"
+                android:id="@+id/regRgrSexo"
                 android:layout_width="220dp"
                 android:layout_height="115dp"
                 android:layout_gravity="center_horizontal"
@@ -122,20 +122,20 @@
                     tools:ignore="DuplicateIds" />
 
                 <RadioButton
-                    android:id="@+id/rdbM"
+                    android:id="@+id/regRbtMaculino"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
                     android:textColor="#FF5722"
-                    android:text="Másculino"
+                    android:text="@string/regRbtMasculino"
                     tools:ignore="DuplicateIds" />
 
                 <RadioButton
-                    android:id="@+id/rdbF"
+                    android:id="@+id/regRbtFemenino"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
-                    android:text="Femenino"
+                    android:text="@string/regRbtFemenino"
                     android:textColor="#FF5722"
                     tools:ignore="DuplicateIds,TouchTargetSizeCheck" />
             </RadioGroup>
@@ -148,21 +148,21 @@
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#FF5722"
                 android:ems="10"
-                android:hint="Celular"
+                android:hint="@string/regTextCelular"
                 android:inputType="number"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="95dp"
                 tools:layout_editor_absoluteY="494dp" />
 
             <EditText
-                android:id="@+id/txtEmail"
+                android:id="@+id/txtRegEmail"
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#FF5722"
                 android:ems="10"
-                android:hint="Correo Electronico"
+                android:hint="@string/regTextCorreo"
                 android:inputType="text"
                 android:minHeight="48dp"
                 tools:ignore="MissingConstraints"
@@ -171,36 +171,50 @@
 
 
             <EditText
-                android:id="@+id/txtContra1"
+                android:id="@+id/txtRegContra"
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#FF5722"
                 android:ems="10"
-                android:hint="Contraseña"
+                android:hint="@string/regTextCorreoContra"
                 android:inputType="textPassword"
                 android:minHeight="48dp"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="95dp"
                 tools:layout_editor_absoluteY="137dp" />
 
-            <Button
-                android:id="@+id/btnRegistrarUsu"
-                android:layout_width="220dp"
-                android:layout_height="46dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="15dp"
-                android:backgroundTint="#FF5722"
-                android:onClick="registrar"
-                android:text="Registrar"
-                app:cornerRadius="0sp"
-                tools:ignore="MissingConstraints,TouchTargetSizeCheck"
-                tools:layout_editor_absoluteX="93dp"
-                tools:layout_editor_absoluteY="1013dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/regbtnRegis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="20dp"
+                    android:backgroundTint="#FF5722"
+                    android:onClick="registrar"
+                    android:text="@string/regBtnRegistrar"
+                    android:layout_weight="1"/>
+                <Button
+                    android:id="@+id/regbtnCancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="15dp"
+                    android:layout_margin="20dp"
+                    android:backgroundTint="#FF5722"
+                    android:text="@string/regBtnCancelar"
+                    app:cornerRadius="0sp"
+                    android:layout_weight="1"
+                    tools:ignore="MissingConstraints,TouchTargetSizeCheck"
+                    tools:layout_editor_absoluteX="93dp"
+                    tools:layout_editor_absoluteY="1013dp" />
 
-
-
+            </LinearLayout>
 
         </LinearLayout>
 

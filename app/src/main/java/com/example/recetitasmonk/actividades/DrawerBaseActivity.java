@@ -71,6 +71,13 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        return false;
+        if (R.id.nav_cerrarSesion==menuItem.getItemId()){
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new busquedaFragment()).commit();
+        }
+
+        return true;
     }
+
+
+
 }
