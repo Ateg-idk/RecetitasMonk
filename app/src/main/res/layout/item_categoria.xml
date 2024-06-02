@@ -49,8 +49,8 @@
                     android:id="@+id/itcImgDesayuno"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
-                    android:src="@drawable/Desayno"
-                    android:contentDescription="Desayno"
+                    android:src="@drawable/desayuno"
+
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
                     app:layout_constraintStart_toStartOf="parent"
