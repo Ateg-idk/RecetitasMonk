@@ -16,6 +16,7 @@ import com.example.recetitasmonk.clases.Inicio;
 import com.example.recetitasmonk.fragmentos.busquedaFragment;
 import com.example.recetitasmonk.fragmentos.ininFragment;
 import com.example.recetitasmonk.fragmentos.otroFragment;
+import com.example.recetitasmonk.fragmentos.user1Fragment;
 
 public class menfracActivity extends AppCompatActivity implements Inicio {
 
@@ -30,10 +31,11 @@ public class menfracActivity extends AppCompatActivity implements Inicio {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        fragments = new Fragment[3];
+        fragments = new Fragment[4];
         fragments [0] = new ininFragment();
         fragments [1] = new busquedaFragment();
         fragments [2] = new otroFragment();
+        fragments [3] = new user1Fragment();
 
     }
 

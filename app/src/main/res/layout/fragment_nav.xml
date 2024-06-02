@@ -25,14 +25,21 @@
             android:layout_height="30dp"
             android:layout_weight="1"
             android:layout_margin="2dp"
-            android:src="@drawable/search"/>
+            android:src="@drawable/category"/>
         <ImageView
             android:id="@+id/frgMensettingnav"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_weight="1"
             android:layout_margin="2dp"
-            android:src="@drawable/store"/>
+            android:src="@drawable/adds"/>
+        <ImageView
+            android:id="@+id/frgMenpersonav"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:src="@drawable/per"/>
 
     </LinearLayout>
 
