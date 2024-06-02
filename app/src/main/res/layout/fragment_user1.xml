@@ -45,6 +45,7 @@
                 android:background="@android:color/darker_gray"/>
 
             <LinearLayout
+                android:id="@+id/Miperfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -71,6 +72,7 @@
                 android:background="@android:color/darker_gray"/>
 
             <LinearLayout
+                android:id="MisRecetas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -97,6 +99,7 @@
                 android:background="@android:color/darker_gray"/>
 
             <LinearLayout
+                android:id="@+id/MisFavoritos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -133,6 +136,7 @@
                 android:background="@android:color/darker_gray"/>
 
             <LinearLayout
+                android:id="@+id/Lenguajes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -159,6 +163,7 @@
                 android:background="@android:color/darker_gray"/>
 
             <LinearLayout
+                android:id="@+id/PoliticaPrivacidad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -185,6 +190,7 @@
                 android:background="@android:color/darker_gray"/>
 
             <LinearLayout
+                android:id="@+id/TerminosCondiciones"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
