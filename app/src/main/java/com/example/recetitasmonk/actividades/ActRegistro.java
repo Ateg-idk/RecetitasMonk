@@ -82,7 +82,7 @@ public class ActRegistro extends AppCompatActivity implements View.OnClickListen
                 params.add("sexo","F");
             params.add("celular",txtRCelular.getText().toString());
             params.add("correo",txtREmail.getText().toString());
-            params.add("clave",hash.StringToHash(txtRContra.getText().toString(),"SHA256"));
+            params.add("clave",hash.StringToHash(txtRContra.getText().toString(),"SHA256").toLowerCase());
 
             ahcregistrar.post(urlAgregarCliente, params, new BaseJsonHttpResponseHandler() {
                 @Override

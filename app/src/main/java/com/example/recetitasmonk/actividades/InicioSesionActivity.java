@@ -13,10 +13,21 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.recetitasmonk.R;
+import com.example.recetitasmonk.clases.Cliente;
 import com.example.recetitasmonk.clases.Hash;
 import com.example.recetitasmonk.sqlite.RecetitasMonk;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.BaseJsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import cz.msebera.android.httpclient.Header;
 
 public class InicioSesionActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private final static String urlIniciarSesion = "http://recetitasmonk.atwebpages.com/servicios/iniciarSesion.php";
 
     EditText txtCorreo, txtClave;
     CheckBox chkRecordar;
@@ -63,19 +74,64 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
     private void iniciaSesion(String correo, String clave, boolean recordar){
         RecetitasMonk rm = new RecetitasMonk(this);
         Hash hash = new Hash();
+        AsyncHttpClient ahcIniciarSesion = new AsyncHttpClient();
+        RequestParams params = new RequestParams();
+
         clave = recordar == true ? clave : hash.StringToHash(clave,"SHA256").toLowerCase();
-        if (correo.equals("user") && clave.equals("8bb0cf6eb9b17d0f7d22b456f121257dc1254e1f01665370476383ea776df414")){
-            if (chkRecordar.isChecked()){
-                //Guardar credenciales a SQlite
-                rm.agregarUsuario(1,correo,clave);
+        params.add("correo", correo);
+        params.add("clave", clave);
+
+        ahcIniciarSesion.post(urlIniciarSesion,params, new BaseJsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, String rawJsonResponse, Object response) {
+                if (statusCode == 200){
+
+                    try {
+                        JSONArray jsonArray = new JSONArray(rawJsonResponse);
+                        if (jsonArray.length()>0){
+                            int id = jsonArray.getJSONObject(0).getInt("idUsuarios");
+                            if (id == -1)
+                                Toast.makeText(getApplicationContext(),"Credenciales Incorrectas",Toast.LENGTH_SHORT).show();
+                            else {
+                                Cliente cliente = new Cliente();
+                                cliente.setId(id);
+                                cliente.setNombre(jsonArray.getJSONObject(0).getString("nombre"));
+                                cliente.setApellidoP(jsonArray.getJSONObject(0).getString("apellidoP"));
+                                cliente.setApellidoM(jsonArray.getJSONObject(0).getString("apellidoM"));
+                                cliente.setDni(jsonArray.getJSONObject(0).getString("dni"));
+                                cliente.setGenero(jsonArray.getJSONObject(0).getString("genero").charAt(0));
+                                cliente.setCelular(jsonArray.getJSONObject(0).getString("celular"));
+                                cliente.setCorreo(jsonArray.getJSONObject(0).getString("correo"));
+                                cliente.setContraseña(jsonArray.getJSONObject(0).getString("contraseña"));
+
+                                if (chkRecordar.isChecked())
+                                    rm.agregarUsuario(cliente.getId(),cliente.getNombre(),cliente.getApellidoP());
+
+                                Intent iBenvenida = new Intent(getApplicationContext(),DrawerBaseActivity.class);
+                                iBenvenida.putExtra("cliente", cliente);
+                                startActivity(iBenvenida);
+                                finish();
+
+                            }
+
+                        }
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
             }
-            Intent iBienvenida = new Intent(this, ActRegistro.class);
-            iBienvenida.putExtra("nombre ","Fabian");
-            startActivity(iBienvenida);
-            finish();
-        }else {
-            Toast.makeText(this,"Correo o clave incorrecta",Toast.LENGTH_SHORT).show();
-        }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, String rawJsonData, Object errorResponse) {
+                Toast.makeText(getApplicationContext(),"ERROR: " +statusCode,Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            protected Object parseResponse(String rawJsonData, boolean isFailure) throws Throwable {
+                return null;
+            }
+        });
+
     }
 }
 
