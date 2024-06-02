@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textViewReg"
         android:layout_width="match_parent"
         android:layout_height="54dp"
         android:background="#AC1C1C"
@@ -33,28 +33,28 @@
 
 
             <EditText
-                android:id="@+id/txtnom1"
+                android:id="@+id/txtRegNombre"
                 android:layout_width="220dp"
                 android:layout_height="43dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#FF5722"
                 android:ems="10"
-                android:hint="Nombres"
+                android:hint="@string/regTextNombres"
                 android:inputType="text"
                 tools:ignore="MissingConstraints,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="95dp"
                 tools:layout_editor_absoluteY="76dp" />
 
             <EditText
-                android:id="@+id/txtapeP"
+                android:id="@+id/txtRegApelliP"
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#FF5722"
                 android:ems="10"
-                android:hint="Apellido Paterno"
+                android:hint="@string/regTextApelliP"
                 android:inputType="text"
                 android:minHeight="48dp"
                 tools:ignore="MissingConstraints"
@@ -62,14 +62,14 @@
                 tools:layout_editor_absoluteY="137dp" />
 
             <EditText
-                android:id="@+id/txtapeM"
+                android:id="@+id/txtRegApelliM"
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#FF5722"
                 android:ems="10"
-                android:hint="Apellido Materno"
+                android:hint="@string/regTextApelliM"
                 android:inputType="text"
                 tools:ignore="MissingConstraints,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="95dp"
@@ -87,14 +87,14 @@
                 tools:layout_editor_absoluteY="251dp" />
 
             <EditText
-                android:id="@+id/txtdni"
+                android:id="@+id/txtRegDni"
                 android:layout_width="220dp"
                 android:layout_height="47dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#FF5722"
                 android:ems="10"
-                android:hint="Numero de Documento"
+                android:hint="@string/regTextDni"
                 android:inputType="number"
                 tools:ignore="MissingConstraints,TouchTargetSizeCheck"
                 tools:layout_editor_absoluteX="95dp"
@@ -141,7 +141,7 @@
             </RadioGroup>
 
             <EditText
-                android:id="@+id/txtNumCel"
+                android:id="@+id/txtRegCelular"
                 android:layout_width="220dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center_horizontal"

@@ -16,4 +16,11 @@
     <string name="open_nav">Open Navigation Drawer</string>
     <string name="close_nav">Close Navigation Drawer</string>
 
+    //Registro
+    <string name="regTextNombres">Nombres</string>
+    <string name="regTextApelliP">Apellido Paterno</string>
+    <string name="regTextApelliM">Apellido Materno</string>
+    <string name="regTextDni">Numero de Documento</string>
+
+
 </resources>
