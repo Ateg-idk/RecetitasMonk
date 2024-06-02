@@ -21,6 +21,13 @@
     <string name="regTextApelliP">Apellido Paterno</string>
     <string name="regTextApelliM">Apellido Materno</string>
     <string name="regTextDni">Numero de Documento</string>
+    <string name="regTextCelular">Celular</string>
+    <string name="regTextCorreo">Correo</string>
+    <string name="regTextCorreoContra">Contraseña</string>
+    <string name="regRbtMasculino">Masculino</string>
+    <string name="regRbtFemenino">Femenino</string>
+    <string name="regBtnRegistrar">Registrar</string>
+    <string name="regBtnCancelar">Cancelar</string>
 
 
 </resources>
