@@ -33,34 +33,29 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
         txtClave=findViewById(R.id.passwordEditText);
         btnIniciar=findViewById(R.id.btnIniciar);
         chkRecordar = findViewById(R.id.logChkRecordar);
+        lblRegistrar = findViewById(R.id.txtRegistrarseAhora);
 
         btnIniciar.setOnClickListener(this);
+        lblRegistrar.setOnClickListener(this);
 
-        TextView txtRegistrarseAhora = findViewById(R.id.txtRegistrarseAhora);
-
-        txtRegistrarseAhora.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                txtRegistrarseAhora.setTextColor(Color.parseColor("#00BCD4"));
-                iniciarActividadRegistro();
-            }
-        });
+        validarRecordarSesion();
     }
 
-    // Método para iniciar la actividad de registro
-    private void iniciarActividadRegistro() {
-        Intent intent = new Intent(this, ActRegistro.class );
-        startActivity(intent);
+    private void validarRecordarSesion() {
+        RecetitasMonk tm = new RecetitasMonk(this);
+        if(tm.recordoSesion())
+            iniciarSesion(tm.getValue("correo"), tm.getValue("clave"), true);
     }
 
     @Override
     public void onClick(View v) {
 
         if (v.getId() == R.id.btnIniciar)
-            iniciaSesion(txtCorreo.getText().toString().trim().toLowerCase(),txtClave.getText().toString(), false);
+             iniciarSesion(txtCorreo.getText().toString().trim().toLowerCase(),txtClave.getText().toString(), false);
+
     }
 
-    private void iniciaSesion(String correo, String clave, boolean recordar){
+    private void iniciarSesion(String correo, String clave, boolean recordar){
         RecetitasMonk rm = new RecetitasMonk(this);
         Hash hash = new Hash();
         clave = recordar == true ? clave : hash.StringToHash(clave,"SHA256").toLowerCase();

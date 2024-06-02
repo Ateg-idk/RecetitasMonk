@@ -1,6 +1,7 @@
 package com.example.recetitasmonk.sqlite;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -50,5 +51,44 @@ public class RecetitasMonk extends SQLiteOpenHelper {
             return true;
         }
         return  false;
+    }
+    public boolean recordoSesion(){
+        SQLiteDatabase db = getReadableDatabase();
+        if(db != null){
+            Cursor cursor = db.rawQuery("select id from usuario;", null);
+            if(cursor.moveToNext())
+                return true;
+        }
+        return false;
+    }
+
+    public String getValue(String campo){
+        SQLiteDatabase db = getReadableDatabase();
+        String consulta = String.format("select %s from usuario", campo);
+        if(db != null){
+            Cursor cursor = db.rawQuery(consulta, null);
+            if(cursor.moveToNext())
+                return cursor.getString(0);
+        }
+        return null;
+    }
+    public boolean eliminarUsuario(int id) {
+        SQLiteDatabase db = getWritableDatabase();
+        if(db != null){
+            db.execSQL("delete from usuario where id = "+id+";");
+            db.close();
+            return true;
+        }
+        return false;
+    }
+
+    public boolean actualizarDatos(int id, String llave, String valor){
+        SQLiteDatabase db = getWritableDatabase();
+        if(db != null){
+            db.execSQL("update Usuario set "+llave+" = '"+valor+"' where id = "+id+";");
+            db.close();
+            return true;
+        }
+        return false;
     }
 }

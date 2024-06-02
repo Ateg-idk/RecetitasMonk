@@ -11,5 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment" />
+    <Button
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cerrar Sesion"
+        android:textAllCaps="false"
+        android:layout_marginLeft="15dp"
+
+        android:layout_marginVertical="50dp"
+        android:layout_weight="1"/>
 
 </FrameLayout>

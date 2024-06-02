@@ -1,5 +1,6 @@
 package com.example.recetitasmonk.fragmentos;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,15 +8,20 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.example.recetitasmonk.R;
+import com.example.recetitasmonk.actividades.InicioSesionActivity;
+import com.example.recetitasmonk.sqlite.RecetitasMonk;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link user1Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class user1Fragment extends Fragment {
+public class user1Fragment extends Fragment implements View.OnClickListener{
+
+    Button btnCerrarSesion;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,7 +66,28 @@ public class user1Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user1, container, false);
+        View vista = inflater.inflate(R.layout.fragment_user1, container, false);
+
+        btnCerrarSesion = vista.findViewById(R.id.btnCerrarSesion);
+
+        btnCerrarSesion.setOnClickListener(this);
+
+        return vista;
     }
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.btnCerrarSesion)
+            cerrarSesion();
+    }
+
+    private void cerrarSesion() {
+        RecetitasMonk tm = new RecetitasMonk(getContext());
+        tm.eliminarUsuario(1);
+        getActivity().finish();
+        Intent inicioSesion = new Intent(getContext(), InicioSesionActivity.class);
+        startActivity(inicioSesion);
+    }
+
+
 }
