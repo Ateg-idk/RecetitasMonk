@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="fondo_pantalla">#FFA686</color>
     <color name="botones">#FF7F50</color>
+    <color name="colorPressed">#D3D3D3</color> <!-- color plomo -->
+
 </resources>
