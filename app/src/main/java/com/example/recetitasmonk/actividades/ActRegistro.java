@@ -27,7 +27,6 @@ public class ActRegistro extends AppCompatActivity implements View.OnClickListen
     EditText txtRNombre, txtRApelliP, txtRApelliM, txtRDni, txtRCelular, txtREmail, txtRContra;
     RadioGroup rgrSexo;
     RadioButton rbtRMaculino, rbtRFemenino;
-    Spinner cboRTipoDoc;
     Button btnRRegis, btnRCancel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +45,6 @@ public class ActRegistro extends AppCompatActivity implements View.OnClickListen
         rbtRMaculino = findViewById(R.id.regRbtMaculino);
         rbtRFemenino = findViewById(R.id.regRbtFemenino);
 
-        cboRTipoDoc = findViewById(R.id.regCboTipoDoc);
 
         btnRRegis = findViewById(R.id.regbtnRegis);
         btnRCancel = findViewById(R.id.regbtnCancel);
@@ -125,7 +123,6 @@ public class ActRegistro extends AppCompatActivity implements View.OnClickListen
             return false;
         if (txtRApelliM.getText().toString().isEmpty())
             return false;
-
 
         if (txtRDni.getText().toString().isEmpty() || txtRDni.getText().toString().length() != 8)
             return false;
