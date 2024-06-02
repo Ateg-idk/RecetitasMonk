@@ -13,7 +13,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.recetitasmonk.R;
+import com.example.recetitasmonk.actividades.EditarActivity;
 import com.example.recetitasmonk.actividades.InicioSesionActivity;
+import com.example.recetitasmonk.actividades.MisFavoritosActivity;
+import com.example.recetitasmonk.actividades.MisRecetasActivity;
+import com.example.recetitasmonk.actividades.PoliticasPrivacidadActivity;
+import com.example.recetitasmonk.actividades.TerminoCondicionesActivity;
 import com.example.recetitasmonk.sqlite.RecetitasMonk;
 
 /**
@@ -24,7 +29,7 @@ import com.example.recetitasmonk.sqlite.RecetitasMonk;
 public class user1Fragment extends Fragment implements View.OnClickListener{
 
     LinearLayout btnCerrarSesion;
-
+    LinearLayout editarPerfil,misrecetas,misfavoritos,politicaPrivacidad,TerminoCondiciones;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -72,8 +77,20 @@ public class user1Fragment extends Fragment implements View.OnClickListener{
         View vista = inflater.inflate(R.layout.fragment_user1, container, false);
 
         btnCerrarSesion = vista.findViewById(R.id.btnCerrarSesion);
+        editarPerfil = vista.findViewById(R.id.editarPerfil);
+        misrecetas = vista.findViewById(R.id.misrecetas);
+        misfavoritos = vista.findViewById(R.id.misfavoritos);
+        politicaPrivacidad = vista.findViewById(R.id.politicaPrivacidad);
+        TerminoCondiciones = vista.findViewById(R.id.TerminoCondiciones);
+
 
         btnCerrarSesion.setOnClickListener(this);
+        misfavoritos.setOnClickListener(this);
+        editarPerfil.setOnClickListener(this);
+        misrecetas.setOnClickListener(this);
+        politicaPrivacidad.setOnClickListener(this);
+        TerminoCondiciones.setOnClickListener(this);
+
 
         return vista;
     }
@@ -82,6 +99,17 @@ public class user1Fragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         if(v.getId() == R.id.btnCerrarSesion)
             cerrarSesion();
+        else if (v.getId()==R.id.editarPerfil){
+            cargarperfil();
+        }else if (v.getId()==R.id.misrecetas){
+            cargarRecetas();
+        }else if (v.getId()==R.id.misfavoritos){
+            cargarFavoritos();
+        }else if (v.getId()==R.id.politicaPrivacidad){
+            cargarPolitica();
+        }else if (v.getId()==R.id.TerminoCondiciones){
+            cargarTerminos();
+        }
     }
 
     private void cerrarSesion() {
@@ -90,6 +118,26 @@ public class user1Fragment extends Fragment implements View.OnClickListener{
         getActivity().finish();
         Intent inicioSesion = new Intent(getContext(), InicioSesionActivity.class);
         startActivity(inicioSesion);
+    }
+    private void cargarperfil(){
+        Intent iPerfil = new Intent(getContext(), EditarActivity.class);
+        startActivity(iPerfil);
+    }
+    private void cargarRecetas(){
+        Intent iRecetas = new Intent(getContext(), MisRecetasActivity.class);
+        startActivity(iRecetas);
+    }
+    private void cargarFavoritos(){
+        Intent iFavoritos = new Intent(getContext(), MisFavoritosActivity.class);
+        startActivity(iFavoritos);
+    }
+    private void cargarPolitica(){
+        Intent iPolitica = new Intent(getContext(), PoliticasPrivacidadActivity.class);
+        startActivity(iPolitica);
+    }
+    private void cargarTerminos(){
+        Intent iTerminos = new Intent(getContext(), TerminoCondicionesActivity.class);
+        startActivity(iTerminos);
     }
 
 

@@ -6,154 +6,131 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:background="@drawable/background">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
-
     <LinearLayout
-        android:id="@+id/linear_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="35dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="40dp"
-        android:gravity="start"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="98dp"
-            android:text="Perfil"
-            android:textColor="@color/black"
-            android:textSize="40sp"
-            android:textStyle="bold" />
+
+        <!-- TextView para "Nombre" -->
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="40dp"
+            android:layout_height="33dp"
+            app:srcCompat="@drawable/atrass" />
 
         <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="0dp"
-            android:layout_height="55dp"
-            android:layout_marginLeft="80dp"
-            android:layout_weight="1"
-            android:src="@drawable/rayita" />
-    </LinearLayout>
+            android:layout_width="227dp"
+            android:layout_height="135dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:contentDescription="Your Image"
+            android:src="@drawable/personaicono" />
 
-
-    <!-- TextView para "Nombre" -->
-    <ImageView
-        android:layout_width="227dp"
-        android:layout_height="135dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:contentDescription="Your Image"
-        android:src="@drawable/personaicono" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nombre"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:textColor="@android:color/black" />
-
-    <EditText
-        android:id="@+id/name_editText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nombre"
-        android:inputType="textPersonName"
-        android:padding="8dp"
-        android:background="@drawable/edittext_border"
-        android:layout_marginBottom="8dp" />
-
-    <!-- TextView para "Apellido" -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Apellido"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:textColor="@android:color/black" />
-
-    <EditText
-        android:id="@+id/last_name_editText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Apellido"
-        android:inputType="textPersonName"
-        android:padding="8dp"
-        android:background="@drawable/edittext_border"
-        android:layout_marginBottom="8dp" />
-
-    <!-- TextView para "Correo Electrónico" -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Correo Electrónico"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:textColor="@android:color/black" />
-
-    <EditText
-        android:id="@+id/email_editText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Correo electrónico"
-        android:inputType="textEmailAddress"
-        android:padding="8dp"
-        android:background="@drawable/edittext_border"
-        android:layout_marginBottom="8dp" />
-
-    <!-- TextView para "Contraseña" -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Contraseña"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:textColor="@android:color/black" />
-
-    <EditText
-        android:id="@+id/txtContraseña"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:padding="8dp"
-        android:background="@drawable/edittext_border"
-        android:layout_marginBottom="8dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="16dp"
-        android:gravity="center">
-
-        <Button
-            android:id="@+id/edit_button"
-            android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Editar"
-            android:textSize="16sp"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
-            android:layout_marginEnd="8dp" />
+            android:text="Nombre"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black" />
 
-        <Button
-            android:id="@+id/apply_button"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/name_editText"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Aplicar"
-            android:textSize="16sp"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
-            android:layout_marginStart="8dp" />
+            android:hint="Nombre"
+            android:inputType="textPersonName"
+            android:padding="8dp"
+            android:background="@drawable/edittext_border"
+            android:layout_marginBottom="8dp" />
+
+        <!-- TextView para "Apellido" -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apellido"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black" />
+
+        <EditText
+            android:id="@+id/last_name_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Apellido"
+            android:inputType="textPersonName"
+            android:padding="8dp"
+            android:background="@drawable/edittext_border"
+            android:layout_marginBottom="8dp" />
+
+        <!-- TextView para "Correo Electrónico" -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Correo Electrónico"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black" />
+
+        <EditText
+            android:id="@+id/email_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo electrónico"
+            android:inputType="textEmailAddress"
+            android:padding="8dp"
+            android:background="@drawable/edittext_border"
+            android:layout_marginBottom="8dp" />
+
+        <!-- TextView para "Contraseña" -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contraseña"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@android:color/black" />
+
+        <EditText
+            android:id="@+id/txtContraseña"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:background="@drawable/edittext_border"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/edit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Editar"
+                android:textSize="16sp"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/apply_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aplicar"
+                android:textSize="16sp"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:layout_marginStart="8dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
-
-</LinearLayout>
-    </ScrollView>
+</ScrollView>
