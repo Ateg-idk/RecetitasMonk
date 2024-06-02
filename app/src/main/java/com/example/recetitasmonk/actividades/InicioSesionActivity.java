@@ -52,7 +52,8 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
 
         if (v.getId() == R.id.btnIniciar)
              iniciarSesion(txtCorreo.getText().toString().trim().toLowerCase(),txtClave.getText().toString(), false);
-
+        else if(v.getId() == R.id.txtRegistrarseAhora)
+            registrar();
     }
 
     private void iniciarSesion(String correo, String clave, boolean recordar){
@@ -72,5 +73,12 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
             Toast.makeText(this,"Correo o clave incorrecta",Toast.LENGTH_SHORT).show();
         }
     }
+
+    private void registrar() {
+        Intent iRegistro = new Intent(this, ActRegistro.class);
+        startActivity(iRegistro);
+        finish();
+    }
+
 }
 
