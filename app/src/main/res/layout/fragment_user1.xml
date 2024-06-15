@@ -124,7 +124,7 @@
                 android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Otros"
+                android:text="@string/TxtOtro"
                 android:textSize="20sp"
                 android:layout_marginVertical="20dp"
                 android:textStyle="bold"
@@ -135,6 +135,13 @@
                 android:layout_height="1dp"
                 android:background="@android:color/darker_gray"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:text="@string/frgCfgLblPreferencias"/>
+
             <LinearLayout
 
                 android:layout_width="match_parent"
@@ -143,18 +150,13 @@
                 android:paddingVertical="8dp"
                 android:background="@drawable/item_background_selector">
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/lenguaje"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginEnd="16dp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Lenguajes"
-                    android:textSize="16sp"/>
+
+                <Spinner
+                    android:id="@+id/frgCfgIdioma"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
             </LinearLayout>
 
             <View
@@ -240,6 +242,30 @@
                     android:textSize="16sp"
                     android:textColor="@android:color/holo_red_dark"/>
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/frgCfgGuardar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/frgCfgBtnGuardar"
+                    android:textAllCaps="false"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="1"/>
+                <Button
+                    android:id="@+id/frgCerrarses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/frmBtnCerrarses"
+                    android:textAllCaps="false"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+
         </LinearLayout>
     </LinearLayout>
 
