@@ -31,6 +31,9 @@
     <string name="regRbtFemenino">Femenino</string>
     <string name="regBtnRegistrar">Registrar</string>
     <string name="regBtnCancelar">Cancelar</string>
-
+    <string name="frgCfgLblPreferencias">Cambia Idioma</string>
+    <string name="frgCfgBtnGuardar">Guardar</string>
+    <string name="frmBtnCerrarses">Cerrar Sesion</string>
+    <string name="TxtOtro">Otros</string>
 
 </resources>
