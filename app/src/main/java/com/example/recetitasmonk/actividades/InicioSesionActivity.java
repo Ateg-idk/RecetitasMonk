@@ -58,14 +58,7 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
             iniciarSesion(tm.getValue("correo"), tm.getValue("clave"), true);
     }
 
-    @Override
-    public void onClick(View v) {
 
-        if (v.getId() == R.id.btnIniciar)
-             iniciarSesion(txtCorreo.getText().toString().trim().toLowerCase(),txtClave.getText().toString(), false);
-        else if(v.getId() == R.id.txtRegistrarseAhora)
-            registrar();
-    }
 
     private void iniciarSesion(String correo, String clave, boolean recordar){
         RecetitasMonk rm = new RecetitasMonk(this);
@@ -105,6 +98,7 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
 
                                 Intent iBenvenida = new Intent(getApplicationContext(),DrawerBaseActivity.class);
                                 iBenvenida.putExtra("cliente", cliente);
+                                iBenvenida.putExtra("idBoton",0);
                                 startActivity(iBenvenida);
                                 finish();
 
@@ -134,6 +128,14 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
         Intent iRegistro = new Intent(this, ActRegistro.class);
         startActivity(iRegistro);
         finish();
+    }
+    @Override
+    public void onClick(View v) {
+
+        if (v.getId() == R.id.btnIniciar)
+            iniciarSesion(txtCorreo.getText().toString().trim().toLowerCase(),txtClave.getText().toString(), false);
+        else if(v.getId() == R.id.txtRegistrarseAhora)
+            registrar();
     }
 
 }

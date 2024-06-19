@@ -2,35 +2,22 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".actividades.InicioSesionActivity"
-    tools:openDrawer="start"
     android:fitsSystemWindows="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:id="@+id/toolbar"
-            android:elevation="4dp"
-            android:background="@color/fondo_pantalla"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            android:popupTheme="@style/Theme.AppCompat.Light"/>
 
         <RelativeLayout
+            android:id="@+id/menunav"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/menunav"/>
+            android:layout_height="match_parent"/>
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/fragment_container"/>
+
     </LinearLayout>
 
     <fragment
@@ -40,15 +27,5 @@
         android:layout_height="wrap_content"
         tools:layout="@layout/fragment_nav" />
 
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/nav_view"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/main_drawer_header"
-        app:menu="@menu/main_drawer_menu"
-        app:itemIconTint="@color/fondo_pantalla"
-        app:itemTextColor="@color/fondo_pantalla"
-        android:fitsSystemWindows="true" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

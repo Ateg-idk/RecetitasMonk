@@ -22,7 +22,7 @@ public class CargaActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(CargaActivity.this, DrawerBaseActivity.class ));
+                startActivity(new Intent(CargaActivity.this, InicioSesionActivity.class ));
                 finish();
             }
         },2500);

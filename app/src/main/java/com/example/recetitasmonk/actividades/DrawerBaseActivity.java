@@ -1,33 +1,30 @@
 package com.example.recetitasmonk.actividades;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.MenuItem;
-
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+
 import com.example.recetitasmonk.R;
 import com.example.recetitasmonk.clases.Inicio;
+import com.example.recetitasmonk.fragmentos.CategoriasFragment;
 import com.example.recetitasmonk.fragmentos.busquedaFragment;
 import com.example.recetitasmonk.fragmentos.ininFragment;
 import com.example.recetitasmonk.fragmentos.otroFragment;
 import com.example.recetitasmonk.fragmentos.user1Fragment;
 import com.google.android.material.navigation.NavigationView;
 
-public class DrawerBaseActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, Inicio {
+public class DrawerBaseActivity extends AppCompatActivity implements Inicio {
 
-    private DrawerLayout drawerLayout;
 
     Fragment [] fragments;
     @Override
@@ -41,24 +38,8 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
         fragments [2] = new otroFragment();
         fragments [3] = new user1Fragment();
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        drawerLayout = findViewById(R.id.drawerLayout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        ActionBarDrawerToggle toogle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav);
-        drawerLayout.addDrawerListener(toogle);
-        toogle.syncState();
-
-        if (savedInstanceState == null){
-
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ininFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_perfil);
-
-        }
-
+        int idBoton = getIntent().getIntExtra("idBoton", -1);
+        onClickInicio(idBoton);
 
     }
     @Override
@@ -68,17 +49,6 @@ public class DrawerBaseActivity extends AppCompatActivity implements NavigationV
         ft.replace(R.id.menunav, fragments[idBoton]);
         ft.commit();
     }
-
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        if (R.id.nav_cerrarSesion==menuItem.getItemId()){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new busquedaFragment()).commit();
-        }
-
-        return true;
-    }
-
 
 
 }
