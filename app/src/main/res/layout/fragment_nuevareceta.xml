@@ -129,7 +129,7 @@
         android:id="@+id/publicar"
         android:layout_width="161dp"
         android:layout_height="52dp"
-        android:layout_marginLeft="135dp"
+        android:layout_marginLeft="134dp"
         android:layout_marginTop="650dp"
         android:text="Publicar"
         tools:layout_editor_absoluteX="53dp"
