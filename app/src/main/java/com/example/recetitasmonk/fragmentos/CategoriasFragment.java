@@ -20,8 +20,6 @@ import com.example.recetitasmonk.clases.Categoria;
 import com.example.recetitasmonk.clases.Inicio;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.BaseJsonHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -152,4 +150,5 @@ public class CategoriasFragment extends Fragment implements View.OnClickListener
         ft.replace(R.id.menunav, fragments [idBoton]);
         ft.commit();
     }
+
 }
