@@ -125,11 +125,15 @@
         android:layout_marginTop="600dp"
         />
 
-
-
-
-
-
+    <Button
+        android:id="@+id/publicar"
+        android:layout_width="161dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="650dp"
+        android:text="Publicar"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="647dp" />
 
 
 </FrameLayout>
