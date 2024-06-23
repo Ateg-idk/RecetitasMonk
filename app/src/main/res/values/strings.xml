@@ -36,4 +36,36 @@
     <string name="frmBtnCerrarses">Cerrar Sesion</string>
     <string name="TxtOtro">Otros</string>
 
+    <string name="agregar_rec">
+Agregar Recetas
+</string>
+    <!-- strings.xml -->
+    <string name="nombre_de_l">
+Nombre de la Receta
+</string>
+    <string name="ingrediente">
+Ingredientes
+</string>
+    <string name="preparacion">
+Preparacion
+</string>
+    <string name="categoria">
+Categoria
+</string>
+    <!-- strings.xml -->
+    <string name="label">
+Pick an option
+</string>
+    <string-array name="categorias_array">
+        <item>Desayuno</item>
+        <item>Almuerzo</item>
+        <item>Navideñas</item>
+        <item>Ensaladas</item>
+        <item>Bebidas</item>
+        <item>Panes</item>
+        <item>Comida para Niños</item>
+        <item>Sopas</item>
+        <item>Saludables</item>
+        <item>Bocaditos</item>
+    </string-array>
 </resources>

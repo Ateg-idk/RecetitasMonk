@@ -19,6 +19,7 @@ import com.example.recetitasmonk.clases.Inicio;
 import com.example.recetitasmonk.fragmentos.CategoriasFragment;
 import com.example.recetitasmonk.fragmentos.busquedaFragment;
 import com.example.recetitasmonk.fragmentos.ininFragment;
+import com.example.recetitasmonk.fragmentos.nuevarecetaFragment;
 import com.example.recetitasmonk.fragmentos.otroFragment;
 import com.example.recetitasmonk.fragmentos.user1Fragment;
 import com.google.android.material.navigation.NavigationView;
@@ -34,8 +35,8 @@ public class DrawerBaseActivity extends AppCompatActivity implements Inicio {
 
         fragments = new Fragment[4];
         fragments [0] = new ininFragment();
-        fragments [1] = new busquedaFragment();
-        fragments [2] = new otroFragment();
+        fragments [1] = new CategoriasFragment();
+        fragments [2] = new nuevarecetaFragment();
         fragments [3] = new user1Fragment();
 
         int idBoton = getIntent().getIntExtra("idBoton", -1);
