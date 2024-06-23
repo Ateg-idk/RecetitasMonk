@@ -68,4 +68,38 @@ Pick an option
         <item>Saludables</item>
         <item>Bocaditos</item>
     </string-array>
+    <!-- Términos y Condiciones -->
+    <string name="terms_conditions_title">Términos y Condiciones</string>
+    <string name="terms_conditions">
+        <![CDATA[
+        Bienvenido a Recetitas Monk. Al usar nuestra aplicación, aceptas cumplir con los siguientes términos y condiciones:
+        \n\n
+        1. Aceptación de los Términos
+        Al acceder y utilizar Recetitas Monk, aceptas estar sujeto a estos términos y condiciones. Si no estás de acuerdo con alguna parte de estos términos, no debes usar la aplicación.
+        \n\n
+        2. Uso de la Aplicación
+        - Registro: Debes registrarte para usar ciertas funcionalidades de la app. Proporciona información veraz y completa durante el registro.
+        - Contenido del Usuario: Eres responsable del contenido que subas. No debes subir contenido que sea ofensivo, ilegal o que infrinja derechos de terceros.
+        - Derechos de Uso: Concedes a Recetitas Monk el derecho de usar, distribuir y mostrar el contenido que subas.
+        \n\n
+        3. Privacidad
+        Nuestra política de privacidad explica cómo recopilamos, usamos y compartimos tu información personal. Al usar la app, aceptas nuestra política de privacidad.
+        \n\n
+        4. Propiedad Intelectual
+        Todo el contenido y software en la app es propiedad de Recetitas Monk o de sus licenciantes y está protegido por leyes de propiedad intelectual.
+        \n\n
+        5. Limitación de Responsabilidad
+        Recetitas Monk no será responsable de ningún daño indirecto, incidental, especial o consecuente que surja del uso de la aplicación.
+        \n\n
+        6. Modificaciones de los Términos
+        Recetitas Monk se reserva el derecho de modificar estos términos en cualquier momento. Te notificaremos sobre cualquier cambio material a través de la app.
+        \n\n
+        7. Ley Aplicable
+        Estos términos se regirán e interpretarán de acuerdo con las leyes.
+        \n\n
+        8. Contacto
+        Para cualquier pregunta sobre estos términos, puedes contactarnos al número 908611017.
+        ]]>
+    </string>
+
 </resources>
