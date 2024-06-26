@@ -1,6 +1,8 @@
 package com.example.recetitasmonk.actividades;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -58,8 +60,6 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
             iniciarSesion(tm.getValue("correo"), tm.getValue("clave"), true);
     }
 
-
-
     private void iniciarSesion(String correo, String clave, boolean recordar){
         RecetitasMonk rm = new RecetitasMonk(this);
         Hash hash = new Hash();
@@ -96,6 +96,12 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
                                 if (chkRecordar.isChecked())
                                     rm.agregarUsuario(cliente.getId(),cliente.getNombre(),cliente.getApellidoP());
 
+                                // Guardar el ID del usuario en SharedPreferences
+                                SharedPreferences sharedPref = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPref.edit();
+                                editor.putString("userId", String.valueOf(cliente.getId()));
+                                editor.apply();
+
                                 Intent iBenvenida = new Intent(getApplicationContext(),DrawerBaseActivity.class);
                                 iBenvenida.putExtra("cliente", cliente);
                                 iBenvenida.putExtra("idBoton",0);
@@ -129,6 +135,7 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
         startActivity(iRegistro);
         finish();
     }
+
     @Override
     public void onClick(View v) {
 
@@ -137,6 +144,4 @@ public class InicioSesionActivity extends AppCompatActivity implements View.OnCl
         else if(v.getId() == R.id.txtRegistrarseAhora)
             registrar();
     }
-
 }
-

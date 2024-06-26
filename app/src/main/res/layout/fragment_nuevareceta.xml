@@ -21,15 +21,16 @@
         android:gravity="top"
         />
 
-    <View
+    <ImageView
         android:id="@+id/image_16"
         android:layout_width="164dp"
         android:layout_height="164dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="114dp"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="114dp"
         android:layout_marginTop="71dp"
-        android:background="@drawable/image_16"
+        android:src="@drawable/image_16"
+
         />
     <TextView
         android:id="@+id/nombre_de_l"
