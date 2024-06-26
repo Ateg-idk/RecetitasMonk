@@ -101,5 +101,15 @@ Pick an option
         Para cualquier pregunta sobre estos términos, puedes contactarnos al número 908611017.
         ]]>
     </string>
+    <string name="diplay_25_s">
+Mis Recetas
+</string>
+
+    <string name="nombre_de_la">
+Nombre de la receta
+</string>
+    <string name="autor">
+Autor
+</string>
 
 </resources>
