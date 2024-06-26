@@ -41,4 +41,17 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">#5533FF</item>
     </style>
+    <style name="diplay_25_s">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#36454F</item>
+    </style>
+
+    <style name="nombre_de_la">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#36383C</item>
+    </style>
+    <style name="autor">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#36383C</item>
+    </style>
 </resources>
