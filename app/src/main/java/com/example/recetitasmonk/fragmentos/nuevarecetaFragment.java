@@ -205,12 +205,10 @@ public class nuevarecetaFragment extends Fragment {
 
     public void limpiarImagen() {
         if (selectedImageUri != null && !selectedImageUri.toString().equals("android.resource://com.example.recetitasmonk/drawable/image_16")) {
-            image16.setImageResource(android.R.color.transparent);
+            image16.setImageResource(R.drawable.image_16);
             selectedImageUri = null;
         }
     }
-
-
 
     public void limpiarCampos() {
         etNombreReceta.setText("");
