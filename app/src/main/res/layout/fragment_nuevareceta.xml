@@ -5,136 +5,118 @@
     android:layout_height="match_parent"
     tools:context=".fragmentos.nuevarecetaFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/agregar_rec"
-        android:layout_width="204dp"
-        android:layout_height="38dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="109dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="14dp"
-        android:text="@string/agregar_rec"
-        android:textAppearance="@style/agregar_rec"
-        android:lineSpacingExtra="2sp"
-        android:translationY="-1.2sp"
-        android:gravity="top"
-        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/image_16"
-        android:layout_width="164dp"
-        android:layout_height="164dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="114dp"
-        android:layout_marginTop="71dp"
-        android:src="@drawable/image_16"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        />
-    <TextView
-        android:id="@+id/nombre_de_l"
-        android:layout_width="160dp"
-        android:layout_height="24dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="38dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="255dp"
-        android:text="@string/nombre_de_l"
-        android:textAppearance="@style/nombre_de_l"
-        android:lineSpacingExtra="2sp"
-        android:translationY="-0.75sp"
-        android:gravity="top"
-        />
-    <EditText
-        android:id="@+id/rectangle_2"
-        android:layout_width="350dp"
-        android:layout_height="30dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="30dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="293dp"
-        android:background="@drawable/rectangle_2"
-        />
-    <TextView
-        android:id="@+id/ingrediente"
-        android:layout_width="97dp"
-        android:layout_height="24dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="38dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="344dp"
-        android:text="@string/ingrediente"
-        android:textAppearance="@style/ingrediente"
-        android:lineSpacingExtra="2sp"
-        android:translationY="-0.75sp"
-        android:gravity="top"
-        />
-    <EditText
-        android:id="@+id/rectangle_3"
-        android:layout_width="350dp"
-        android:layout_height="30dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="30dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="382dp"
-        android:background="@drawable/rectangle_2"
-        />
-    <TextView
-        android:id="@+id/preparacion"
-        android:layout_width="94dp"
-        android:layout_height="24dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="40dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="429dp"
-        android:text="@string/preparacion"
-        android:textAppearance="@style/preparacion"
-        android:lineSpacingExtra="2sp"
-        android:translationY="-0.75sp"
-        android:gravity="top"
-        />
-    <EditText
-        android:id="@+id/rectangle_4"
-        android:layout_width="350dp"
-        android:layout_height="90dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="30dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="467dp"
-        android:background="@drawable/rectangle_2"
-        />
-    <TextView
-        android:id="@+id/categoria"
-        android:layout_width="77dp"
-        android:layout_height="24dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="39dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="570dp"
-        android:text="@string/categoria"
-        android:textAppearance="@style/categoria"
-        android:lineSpacingExtra="2sp"
-        android:translationY="-0.75sp"
-        android:gravity="top"
-        />
-    <Spinner
-        android:id="@+id/spinner_categoria"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="600dp"
-        />
+            <TextView
+                android:id="@+id/agregar_rec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/agregar_rec"
+                android:textAppearance="@style/agregar_rec"
+                android:gravity="center"
+                android:paddingBottom="8dp" />
 
-    <Button
-        android:id="@+id/publicar"
-        android:layout_width="161dp"
-        android:layout_height="52dp"
-        android:layout_marginLeft="134dp"
-        android:layout_marginTop="650dp"
-        android:text="Publicar"
-        tools:layout_editor_absoluteX="53dp"
-        tools:layout_editor_absoluteY="647dp" />
+            <ImageView
+                android:id="@+id/image_16"
+                android:layout_width="164dp"
+                android:layout_height="164dp"
+                android:layout_gravity="center"
+                android:src="@drawable/image_16"
+                android:layout_marginBottom="16dp" />
 
+            <TextView
+                android:id="@+id/nombre_de_l"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre_de_l"
+                android:textAppearance="@style/nombre_de_l"
+                android:paddingBottom="8dp" />
 
+            <EditText
+                android:id="@+id/rectangle_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_2"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/ingrediente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ingrediente"
+                android:textAppearance="@style/ingrediente"
+                android:paddingBottom="8dp" />
+
+            <EditText
+                android:id="@+id/rectangle_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_2"
+                android:layout_marginBottom="1dp" />
+
+            <TextView
+                android:id="@+id/preparacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/preparacion"
+                android:textAppearance="@style/preparacion"
+                android:paddingBottom="8dp" />
+
+                <EditText
+                    android:id="@+id/rectangle_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle_2"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:lines="5"
+                    android:minLines="5"
+                    android:scrollbars="vertical" />
+
+            <TextView
+                android:id="@+id/categoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/categoria"
+                android:textAppearance="@style/categoria"
+                android:paddingBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/spinner_categoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/departamento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/departamento"
+                android:textAppearance="@style/categoria"
+                android:paddingBottom="8dp" />
+
+            <Spinner
+                android:id="@+id/spinner_departamento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:entries="@array/departamentos_array" />
+
+            <Button
+                android:id="@+id/publicar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Publicar" />
+
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>
