@@ -52,6 +52,9 @@ Preparacion
     <string name="categoria">
 Categoria
 </string>
+    <string name="departamento">
+Departamento
+</string>
     <!-- strings.xml -->
     <string name="label">
 Pick an option
@@ -111,5 +114,32 @@ Nombre de la receta
     <string name="autor">
 Autor
 </string>
+    <string-array name="departamentos_array">
+        <item>Amazonas</item>
+        <item>Áncash</item>
+        <item>Apurímac</item>
+        <item>Arequipa</item>
+        <item>Ayacucho</item>
+        <item>Cajamarca</item>
+        <item>Callao</item>
+        <item>Cusco</item>
+        <item>Huancavelica</item>
+        <item>Huánuco</item>
+        <item>Ica</item>
+        <item>Junín</item>
+        <item>La Libertad</item>
+        <item>Lambayeque</item>
+        <item>Lima</item>
+        <item>Loreto</item>
+        <item>Madre de Dios</item>
+        <item>Moquegua</item>
+        <item>Pasco</item>
+        <item>Piura</item>
+        <item>Puno</item>
+        <item>San Martín</item>
+        <item>Tacna</item>
+        <item>Tumbes</item>
+        <item>Ucayali</item>
+    </string-array>
 
 </resources>

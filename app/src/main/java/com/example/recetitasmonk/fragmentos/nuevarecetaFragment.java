@@ -30,14 +30,13 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.recetitasmonk.R;
 
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class nuevarecetaFragment extends Fragment {
     private EditText etNombreReceta, etIngredientes, etPreparacion;
-    private Spinner spinnerCategoria;
+    private Spinner spinnerCategoria, spinnerDepartamento;
     private Button btnPublicar;
     private ImageView image16;
     private static final String TAG = "RecetasNuevasFragment";
@@ -51,13 +50,19 @@ public class nuevarecetaFragment extends Fragment {
         etIngredientes = view.findViewById(R.id.rectangle_3);
         etPreparacion = view.findViewById(R.id.rectangle_4);
         spinnerCategoria = view.findViewById(R.id.spinner_categoria);
+        spinnerDepartamento = view.findViewById(R.id.spinner_departamento);
         btnPublicar = view.findViewById(R.id.publicar);
         image16 = view.findViewById(R.id.image_16);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
+        ArrayAdapter<CharSequence> adapterCategoria = ArrayAdapter.createFromResource(getContext(),
                 R.array.categorias_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerCategoria.setAdapter(adapter);
+        adapterCategoria.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerCategoria.setAdapter(adapterCategoria);
+
+        ArrayAdapter<CharSequence> adapterDepartamento = ArrayAdapter.createFromResource(getContext(),
+                R.array.departamentos_array, android.R.layout.simple_spinner_item);
+        adapterDepartamento.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerDepartamento.setAdapter(adapterDepartamento);
 
         image16.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,6 +132,7 @@ public class nuevarecetaFragment extends Fragment {
         String ingredientes = etIngredientes.getText().toString();
         String preparacion = etPreparacion.getText().toString();
         String categoria = spinnerCategoria.getSelectedItem().toString();
+        String departamento = spinnerDepartamento.getSelectedItem().toString();
 
         String idCategoria = obtenerIdCategoria(categoria);
 
@@ -168,6 +174,7 @@ public class nuevarecetaFragment extends Fragment {
                 }
                 params.put("idUsuarios", userId); //  ID del usuario recuperado
                 params.put("idCategoria", idCategoria); // ID de la categoría basada en la selección del Spinner
+                params.put("departamento", departamento); // Nuevo parámetro
                 return params;
             }
         };
@@ -197,7 +204,6 @@ public class nuevarecetaFragment extends Fragment {
                 return "9";
             case "Bocaditos":
                 return "10";
-
             default:
                 return "0";
         }
@@ -215,6 +221,7 @@ public class nuevarecetaFragment extends Fragment {
         etIngredientes.setText("");
         etPreparacion.setText("");
         spinnerCategoria.setSelection(0);
+        spinnerDepartamento.setSelection(0);
         etNombreReceta.requestFocus();
 
         if (selectedImageUri != null) {
