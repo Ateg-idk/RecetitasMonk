@@ -173,7 +173,12 @@ public class ininFragment extends Fragment implements NavigationView.OnNavigatio
             drawerLayout.closeDrawer(GravityCompat.END);
             onClickInicio(idBoton);
             return true; // Retorna true para indicar que el ítem fue manejado
-        } else if (R.id.nav_cerrarSesion == menuItem.getItemId()) {
+        } else if(R.id.nav_Buscar == menuItem.getItemId()) {
+            int idBoton = 1;
+            drawerLayout.closeDrawer(GravityCompat.END);
+            onClickInicio(idBoton);
+            return true; // Retorna true para indicar que el ítem fue manejado
+        }else if (R.id.nav_cerrarSesion == menuItem.getItemId()) {
             requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new busquedaFragment()).commit();
             drawerLayout.closeDrawer(GravityCompat.END);
             return true; // Retorna true para indicar que el ítem fue manejado
