@@ -41,6 +41,14 @@
             android:layout_margin="2dp"
             android:src="@drawable/per"/>
 
+        <ImageView
+            android:id="@+id/frgMenmapav"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:layout_margin="2dp"
+            android:src="@drawable/ubicacion"/>
+
     </LinearLayout>
 
 </FrameLayout>

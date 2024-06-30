@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.recetitasmonk.R;
 import com.example.recetitasmonk.clases.Inicio;
+import com.example.recetitasmonk.fragmentos.MapFragment;
 import com.example.recetitasmonk.fragmentos.busquedaFragment;
 import com.example.recetitasmonk.fragmentos.ininFragment;
 import com.example.recetitasmonk.fragmentos.otroFragment;
@@ -31,11 +32,12 @@ public class menfracActivity extends AppCompatActivity implements Inicio {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        fragments = new Fragment[4];
+        fragments = new Fragment[5];
         fragments [0] = new ininFragment();
         fragments [1] = new busquedaFragment();
         fragments [2] = new otroFragment();
         fragments [3] = new user1Fragment();
+        fragments [4] = new MapFragment();
 
     }
 
