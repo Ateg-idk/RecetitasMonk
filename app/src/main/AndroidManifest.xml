@@ -33,7 +33,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="YOUR_API_KEY" />
+            android:value="AIzaSyAyU4-2-KpofaHrsWEKIHNV9MdYIFL3-tA" />
 
         <activity
             android:name=".actividades.PoliticasPrivacidadActivity"
