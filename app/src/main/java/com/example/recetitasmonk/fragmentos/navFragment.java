@@ -21,7 +21,7 @@ import com.example.recetitasmonk.clases.Inicio;
  * create an instance of this fragment.
  */
 public class navFragment extends Fragment {
-    private final int[] BOTONS = {R.id.frgMenhomeNav, R.id.frgMenchatNav, R.id.frgMensettingnav, R.id.frgMenpersonav};
+    private final int[] BOTONS = {R.id.frgMenhomeNav, R.id.frgMenchatNav, R.id.frgMensettingnav, R.id.frgMenpersonav, R.id.frgMenmapav};
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
