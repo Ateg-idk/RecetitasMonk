@@ -7,6 +7,7 @@
     android:background="@drawable/background"
     android:orientation="vertical">
 
+
     <TextView
         android:id="@+id/textViewReg"
         android:layout_width="match_parent"
@@ -30,8 +31,6 @@
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:orientation="vertical">
-
-
             <EditText
                 android:id="@+id/txtRegNombre"
                 android:layout_width="220dp"
@@ -82,7 +81,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#FF5722"
-                android:ems="10"
+                android:ems="8"
+                android:maxLength="8"
                 android:hint="@string/regTextDni"
                 android:inputType="number"
                 tools:ignore="MissingConstraints,TouchTargetSizeCheck"
@@ -136,7 +136,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#FF5722"
-                android:ems="10"
+                android:ems="9"
+                android:maxLength="9"
                 android:hint="@string/regTextCelular"
                 android:inputType="number"
                 tools:ignore="MissingConstraints"
@@ -166,7 +167,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#FF5722"
-                android:ems="10"
+                android:ems="7"
+                android:maxLength="7"
                 android:hint="@string/regTextCorreoContra"
                 android:inputType="textPassword"
                 android:minHeight="48dp"
