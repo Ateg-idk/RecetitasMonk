@@ -27,11 +27,11 @@
             android:id="@+id/name_user"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Samir Renzo Huamani"
-            android:textSize="20sp"
             android:layout_gravity="center"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp"
+            android:text="@string/itcLblnombreUser"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"

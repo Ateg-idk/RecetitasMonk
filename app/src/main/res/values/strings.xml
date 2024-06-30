@@ -145,4 +145,7 @@ Autor
         <item>Ucayali</item>
     </string-array>
 
+    //mostrar datos
+    <string name="itcLblnombreUser">NombreUser</string>
+
 </resources>
