@@ -52,6 +52,7 @@
             android:orientation="vertical">
 
 
+
             <!-- Tus elementos para la categoría aquí -->
             <TextView
                 android:layout_width="match_parent"
@@ -60,6 +61,13 @@
                 android:textColor="@color/black"
                 android:textSize="28sp"
                 android:textStyle="bold" />
+            <!-- Imagen "Recetas más vistas" -->
+            <ImageView
+                android:id="@+id/image_10"
+                android:layout_width="match_parent"
+                android:layout_height="208dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/desayno" />
 
             <TextView
                 android:id="@+id/textView3"
