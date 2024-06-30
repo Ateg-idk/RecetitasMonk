@@ -26,6 +26,7 @@ import com.example.recetitasmonk.actividades.MisFavoritosActivity;
 import com.example.recetitasmonk.actividades.MisRecetasActivity;
 import com.example.recetitasmonk.actividades.PoliticasPrivacidadActivity;
 import com.example.recetitasmonk.actividades.TerminoCondicionesActivity;
+import com.example.recetitasmonk.clases.Cliente;
 import com.example.recetitasmonk.sqlite.RecetitasMonk;
 
 import java.util.Locale;
@@ -37,7 +38,7 @@ import java.util.Locale;
  */
 public class user1Fragment extends Fragment implements View.OnClickListener{
 
-
+    Cliente cliente ;
     Spinner cboIdioma;
     Button BtnGuardar, BtnCerrarses;
     LinearLayout btnCerrarSesion;
@@ -84,11 +85,13 @@ public class user1Fragment extends Fragment implements View.OnClickListener{
         }
     }
 
+    TextView nombreuser;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View vista = inflater.inflate(R.layout.fragment_user1, container, false);
-
+        cliente = (Cliente) getActivity().getIntent().getSerializableExtra("cliente");
         btnCerrarSesion = vista.findViewById(R.id.btnCerrarSesion);
         editarPerfil = vista.findViewById(R.id.editarPerfil);
         misrecetas = vista.findViewById(R.id.misrecetas);
@@ -107,10 +110,12 @@ public class user1Fragment extends Fragment implements View.OnClickListener{
         TerminoCondiciones.setOnClickListener(this);
         BtnGuardar.setOnClickListener(this);
         BtnCerrarses.setOnClickListener(this);
+
+        nombreuser = vista.findViewById(R.id.name_user);
+        nombreuser.setText(cliente.getNombre());
         //cargamos idiomas al combobox
         llenarIdioma();
         cargarPreferencias();
-
 
         return vista;
     }
@@ -212,6 +217,7 @@ public class user1Fragment extends Fragment implements View.OnClickListener{
     }
     private void cargarperfil(){
         Intent iPerfil = new Intent(getContext(), EditarActivity.class);
+        iPerfil.putExtra("cliente", cliente);
         startActivity(iPerfil);
     }
     private void cargarRecetas(){

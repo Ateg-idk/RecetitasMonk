@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.recetitasmonk.R;
+import com.example.recetitasmonk.clases.Cliente;
 import com.example.recetitasmonk.clases.Inicio;
 import com.example.recetitasmonk.fragmentos.CategoriasFragment;
 import com.example.recetitasmonk.fragmentos.busquedaFragment;
@@ -25,6 +26,8 @@ import com.example.recetitasmonk.fragmentos.user1Fragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class DrawerBaseActivity extends AppCompatActivity implements Inicio {
+
+    Cliente cliente ;
 
 
     Fragment [] fragments;
@@ -41,6 +44,8 @@ public class DrawerBaseActivity extends AppCompatActivity implements Inicio {
 
         int idBoton = getIntent().getIntExtra("idBoton", -1);
         onClickInicio(idBoton);
+
+        cliente = (Cliente) getIntent().getSerializableExtra("cliente");
 
     }
     @Override
