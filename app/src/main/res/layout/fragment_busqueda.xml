@@ -3,13 +3,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragmentos.busquedaFragment">
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/atrass"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <TextView
-        android:id="@+id/busket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buscar"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="sans-serif-black"
+        android:layout_marginTop="16dp" />
+
+
+    <!-- Tus elementos para la categoría aquí -->
+    <SearchView
+        android:id="@+id/searchView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="busqueda" />
+        android:layout_height="wrap_content"
+        android:background="@color/gris_claro"
+        android:padding="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginVertical="60dp"
+        android:iconifiedByDefault="false"
+        android:queryHint="Buscar..."/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cardResultado"
+        android:layout_width="match_parent"
+        android:layout_height="606dp"
+        android:layout_marginVertical="135dp" />
+
 
 </FrameLayout>
