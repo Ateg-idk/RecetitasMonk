@@ -28,7 +28,7 @@
                 android:textColor="@color/black"
                 android:textSize="50sp"
                 android:layout_gravity="center"
-                android:text="Inicio"
+                android:text="@string/frgCfgLblinc"
                 android:layout_weight="1"/>
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -56,7 +56,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Recetas más vistas"
+                android:text="@string/frgCfgLblrv"
                 android:textColor="@color/black"
                 android:textSize="28sp"
                 android:textStyle="bold" />
@@ -71,7 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Recetas Recientes"
+                android:text="@string/frgCfgLblrr"
                 android:textColor="#000000"
                 android:textSize="28sp"
                 android:textStyle="bold" />

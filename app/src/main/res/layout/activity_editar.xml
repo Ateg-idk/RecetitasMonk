@@ -30,7 +30,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre"
+            android:text="@string/frmLblnomb"
             android:textStyle="bold"
             android:textSize="20sp"
             android:textColor="@android:color/black" />
@@ -39,7 +39,7 @@
             android:id="@+id/name_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre"
+            android:hint="@string/frmLblnom"
             android:inputType="textPersonName"
             android:padding="8dp"
             android:background="@drawable/edittext_border"
@@ -48,7 +48,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Apellido"
+            android:text="@string/frmLblapel"
             android:textStyle="bold"
             android:textSize="20sp"
             android:textColor="@android:color/black" />
@@ -57,7 +57,7 @@
             android:id="@+id/last_name_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Apellido"
+            android:hint="@string/frmLblapes"
             android:inputType="textPersonName"
             android:padding="8dp"
             android:background="@drawable/edittext_border"
@@ -66,7 +66,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Correo Electrónico"
+            android:text="@string/frmLblelec"
             android:textStyle="bold"
             android:textSize="20sp"
             android:textColor="@android:color/black" />
@@ -75,7 +75,7 @@
             android:id="@+id/email_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Correo electrónico"
+            android:hint="@string/frmLblcorre"
             android:inputType="textEmailAddress"
             android:padding="8dp"
             android:background="@drawable/edittext_border"
@@ -84,7 +84,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Contraseña"
+            android:text="@string/frmLblpasss"
             android:textStyle="bold"
             android:textSize="20sp"
             android:textColor="@android:color/black" />
@@ -93,7 +93,7 @@
             android:id="@+id/txtContraseña"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Contraseña"
+            android:hint="@string/frmLblcass"
             android:inputType="textPassword"
             android:padding="8dp"
             android:background="@drawable/edittext_border"
@@ -110,7 +110,7 @@
                 android:id="@+id/edit_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Editar"
+                android:text="@string/frmBtned"
                 android:textSize="16sp"
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
@@ -120,7 +120,7 @@
                 android:id="@+id/apply_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Aplicar"
+                android:text="@string/frmBtnaplic"
                 android:textSize="16sp"
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
