@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +31,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.recetitasmonk.R;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -170,7 +172,7 @@ public class nuevarecetaFragment extends Fragment {
                 params.put("ingredientes", ingredientes.isEmpty() ? null : ingredientes);
                 params.put("preparacion", preparacion.isEmpty() ? null : preparacion);
                 if (selectedImageUri != null) {
-                    params.put("imagen", selectedImageUri.toString()); // Guardar la referencia de la imagen en la base de datos
+                    params.put("imagen", encodeImageToBase64(selectedImageUri)); // Guardar la imagen codificada en Base64
                 }
                 params.put("idUsuarios", userId); //  ID del usuario recuperado
                 params.put("idCategoria", idCategoria); // ID de la categoría basada en la selección del Spinner
@@ -180,6 +182,30 @@ public class nuevarecetaFragment extends Fragment {
         };
 
         queue.add(stringRequest);
+    }
+
+    private String encodeImageToBase64(Uri imageUri) {
+        try {
+            Bitmap bitmap = MediaStore.Images.Media.getBitmap(requireActivity().getContentResolver(), imageUri);
+
+            // Reducir el tamaño de la imagen si es necesario
+            int maxSize = 300; // Tamaño máximo en bytes (ejemplo, 1 MB)
+            int width = bitmap.getWidth();
+            int height = bitmap.getHeight();
+            float bitmapRatio = (float) width / (float) height;
+
+            if (bitmap.getByteCount() > maxSize) {
+                bitmap = Bitmap.createScaledBitmap(bitmap, (int) (width / bitmapRatio), (int) (height / bitmapRatio), true);
+            }
+
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 80, baos); // Comprimir la imagen antes de convertirla a Base64
+            byte[] imageBytes = baos.toByteArray();
+            return Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     private String obtenerIdCategoria(String categoria) {
