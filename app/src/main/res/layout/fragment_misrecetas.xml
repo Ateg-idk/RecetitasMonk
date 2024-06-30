@@ -5,14 +5,14 @@
     android:layout_height="match_parent"
     tools:context=".fragmentos.misrecetas">
 
-    <!-- Contenedor principal con orientación vertical -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
-        <!-- RelativeLayout para el texto centrado -->
+
         <RelativeLayout
             android:id="@+id/diplay_24_s"
             android:layout_width="wrap_content"
