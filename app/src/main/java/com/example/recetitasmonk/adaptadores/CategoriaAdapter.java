@@ -1,6 +1,7 @@
 package com.example.recetitasmonk.adaptadores;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
@@ -14,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.recetitasmonk.R;
+import com.example.recetitasmonk.actividades.RecetasPorCategoriaActivity;
 import com.example.recetitasmonk.clases.Categoria;
 
 import java.util.List;
@@ -21,10 +23,10 @@ import java.util.List;
 public class CategoriaAdapter extends RecyclerView.Adapter<CategoriaAdapter.ViewHolder> {
     private List<Categoria> listaCategoria;
     private Context context;
-    private int idCategoria = -1;
 
-    public CategoriaAdapter(List<Categoria> listaCategoria) {
+    public CategoriaAdapter(List<Categoria> listaCategoria,Context context) {
         this.listaCategoria = listaCategoria;
+        this.context = context;
     }
 
     @NonNull
@@ -39,9 +41,20 @@ public class CategoriaAdapter extends RecyclerView.Adapter<CategoriaAdapter.View
         Categoria categoria = listaCategoria.get(position);
         String imagen = categoria.getImgCategoria();
         byte[] imgByte = Base64.decode(imagen, Base64.DEFAULT);
-        Bitmap bitmap = BitmapFactory.decodeByteArray(imgByte,0,imgByte.length);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(imgByte, 0, imgByte.length);
         holder.txtNombre.setText(categoria.getNombreCategoria());
         holder.imgCategoria.setImageBitmap(bitmap);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, RecetasPorCategoriaActivity.class);
+                intent.putExtra("idCategoria", categoria.getIdCategoria());
+                intent.putExtra("nombreCategoria", categoria.getNombreCategoria());
+                //intent.putExtra("imgCategoria", categoria.getImgCategoria());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

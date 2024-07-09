@@ -39,19 +39,9 @@ public class RecetaAdapter extends RecyclerView.Adapter<RecetaAdapter.RecetaView
         holder.tvNombreReceta.setText(receta.getNombreReceta());
         holder.tvIngredientes.setText(receta.getIngredientes());
         holder.tvPreparacion.setText(receta.getPreparacion());
-
-        // Cargar imagen en formato Base64
-        String imagenBase64 = receta.getImagen();
-        if (imagenBase64 != null && !imagenBase64.isEmpty()) {
-            Log.d("RecetaAdapter", "Cargando imagen en Base64");
-            byte[] decodedString = Base64.decode(imagenBase64, Base64.DEFAULT);
-            Bitmap decodedBitmap = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-            holder.ivImagen.setImageBitmap(decodedBitmap);
-        } else {
-            // Si no hay imagen disponible, cargar una imagen de placeholder
-            Log.d("RecetaAdapter", "No se encontró imagen en Base64, cargando placeholder.");
-            holder.ivImagen.setImageResource(R.drawable.desayno);
-        }
+        byte[] imgByte = Base64.decode(receta.getImagen(), Base64.DEFAULT);
+        Bitmap bitmap = BitmapFactory.decodeByteArray(imgByte, 0, imgByte.length);
+        holder.ivImagen.setImageBitmap(bitmap);
     }
 
     @Override
