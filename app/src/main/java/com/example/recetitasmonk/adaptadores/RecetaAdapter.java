@@ -1,5 +1,7 @@
 package com.example.recetitasmonk.adaptadores;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
@@ -14,16 +16,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.recetitasmonk.R;
+import com.example.recetitasmonk.actividades.RecetasPorCategoriaActivity;
+import com.example.recetitasmonk.actividades.recetaActivity;
 import com.example.recetitasmonk.clases.Receta;
 
 import java.util.List;
 
-public class RecetaAdapter extends RecyclerView.Adapter<RecetaAdapter.RecetaViewHolder> {
+public class RecetaAdapter extends RecyclerView.Adapter<RecetaAdapter.RecetaViewHolder>{
 
     private List<Receta> listaReceta;
+    private static final String TAG = "MainActivity";
+    private Context context;
+    public RecetaAdapter(List<Receta> listaReceta,Context context) {
 
-    public RecetaAdapter(List<Receta> listaReceta) {
         this.listaReceta = listaReceta;
+        this.context = context;
     }
 
     @NonNull
@@ -42,6 +49,20 @@ public class RecetaAdapter extends RecyclerView.Adapter<RecetaAdapter.RecetaView
         byte[] imgByte = Base64.decode(receta.getImagen(), Base64.DEFAULT);
         Bitmap bitmap = BitmapFactory.decodeByteArray(imgByte, 0, imgByte.length);
         holder.ivImagen.setImageBitmap(bitmap);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Log.d(TAG, "Entrando a la receta");
+                Intent intent = new Intent(context, recetaActivity.class);
+                intent.putExtra("idReceta", receta.getIdRecetas());
+                intent.putExtra("nombreReceta", receta.getNombreReceta());
+                intent.putExtra("ingredientes", receta.getIngredientes());
+                intent.putExtra("preparacion", receta.getPreparacion());
+
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
