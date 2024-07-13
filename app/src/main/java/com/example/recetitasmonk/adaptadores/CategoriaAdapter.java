@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +24,7 @@ import java.util.List;
 public class CategoriaAdapter extends RecyclerView.Adapter<CategoriaAdapter.ViewHolder> {
     private List<Categoria> listaCategoria;
     private Context context;
-
+    private static final String TAG = "MainActivity";
     public CategoriaAdapter(List<Categoria> listaCategoria,Context context) {
         this.listaCategoria = listaCategoria;
         this.context = context;
@@ -48,6 +49,7 @@ public class CategoriaAdapter extends RecyclerView.Adapter<CategoriaAdapter.View
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(context, RecetasPorCategoriaActivity.class);
                 intent.putExtra("idCategoria", categoria.getIdCategoria());
                 intent.putExtra("nombreCategoria", categoria.getNombreCategoria());

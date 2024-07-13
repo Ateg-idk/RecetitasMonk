@@ -99,7 +99,7 @@ public class ininFragment extends Fragment implements NavigationView.OnNavigatio
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerVistas.setLayoutManager(manager);
-        adapter = new RecetaAdapter(listaReceta);
+        adapter = new RecetaAdapter(listaReceta,this.getContext());
         recyclerVistas.setAdapter(adapter);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

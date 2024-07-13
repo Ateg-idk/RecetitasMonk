@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.util.Log;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -45,6 +45,7 @@ public class RecetasPorCategoriaActivity extends AppCompatActivity implements Vi
     TextView txtCategoria;
     ImageView imgCategoria;
     String url = "http://recetitasmonk.atwebpages.com/servicios/mostrarRecetasPorCategoria.php";
+    private static final String TAG = "MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,12 +53,12 @@ public class RecetasPorCategoriaActivity extends AppCompatActivity implements Vi
 
         recyclerView = findViewById(R.id.recyclerViewRecetas);
         txtCategoria = findViewById(R.id.txtCategoria);
-        imgCategoria = findViewById(R.id.imagen_receta);
+        //imgCategoria = findViewById(R.id.imagen_receta);
         atras = findViewById(R.id.backButton);
         atras.setOnClickListener(this);
 
         recetaList = new ArrayList<>();
-        recetaAdapter = new RecetaAdapter(recetaList);
+        recetaAdapter = new RecetaAdapter(recetaList,this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(recetaAdapter);
 
@@ -149,6 +150,7 @@ public class RecetasPorCategoriaActivity extends AppCompatActivity implements Vi
 
     @Override
     public void onClick(View v) {
+        Log.d(TAG, "Mensaje de depuración");
         if (v.getId()==R.id.backButton)
             onBackPressed();
     }
