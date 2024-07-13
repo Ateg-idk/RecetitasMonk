@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,14 +31,14 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.recetitasmonk.R;
 
-
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class nuevarecetaFragment extends Fragment {
     private EditText etNombreReceta, etIngredientes, etPreparacion;
-    private Spinner spinnerCategoria;
+    private Spinner spinnerCategoria, spinnerDepartamento;
     private Button btnPublicar;
     private ImageView image16;
     private static final String TAG = "RecetasNuevasFragment";
@@ -51,13 +52,19 @@ public class nuevarecetaFragment extends Fragment {
         etIngredientes = view.findViewById(R.id.rectangle_3);
         etPreparacion = view.findViewById(R.id.rectangle_4);
         spinnerCategoria = view.findViewById(R.id.spinner_categoria);
+        spinnerDepartamento = view.findViewById(R.id.spinner_departamento);
         btnPublicar = view.findViewById(R.id.publicar);
         image16 = view.findViewById(R.id.image_16);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
+        ArrayAdapter<CharSequence> adapterCategoria = ArrayAdapter.createFromResource(getContext(),
                 R.array.categorias_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerCategoria.setAdapter(adapter);
+        adapterCategoria.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerCategoria.setAdapter(adapterCategoria);
+
+        ArrayAdapter<CharSequence> adapterDepartamento = ArrayAdapter.createFromResource(getContext(),
+                R.array.departamentos_array, android.R.layout.simple_spinner_item);
+        adapterDepartamento.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerDepartamento.setAdapter(adapterDepartamento);
 
         image16.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,6 +134,7 @@ public class nuevarecetaFragment extends Fragment {
         String ingredientes = etIngredientes.getText().toString();
         String preparacion = etPreparacion.getText().toString();
         String categoria = spinnerCategoria.getSelectedItem().toString();
+        String departamento = spinnerDepartamento.getSelectedItem().toString();
 
         String idCategoria = obtenerIdCategoria(categoria);
 
@@ -164,15 +172,40 @@ public class nuevarecetaFragment extends Fragment {
                 params.put("ingredientes", ingredientes.isEmpty() ? null : ingredientes);
                 params.put("preparacion", preparacion.isEmpty() ? null : preparacion);
                 if (selectedImageUri != null) {
-                    params.put("imagen", selectedImageUri.toString()); // Guardar la referencia de la imagen en la base de datos
+                    params.put("imagen", encodeImageToBase64(selectedImageUri)); // Guardar la imagen codificada en Base64
                 }
                 params.put("idUsuarios", userId); //  ID del usuario recuperado
                 params.put("idCategoria", idCategoria); // ID de la categoría basada en la selección del Spinner
+                params.put("departamento", departamento); // Nuevo parámetro
                 return params;
             }
         };
 
         queue.add(stringRequest);
+    }
+
+    private String encodeImageToBase64(Uri imageUri) {
+        try {
+            Bitmap bitmap = MediaStore.Images.Media.getBitmap(requireActivity().getContentResolver(), imageUri);
+
+            // Reducir el tamaño de la imagen si es necesario
+            int maxSize = 300; // Tamaño máximo en bytes (ejemplo, 1 MB)
+            int width = bitmap.getWidth();
+            int height = bitmap.getHeight();
+            float bitmapRatio = (float) width / (float) height;
+
+            if (bitmap.getByteCount() > maxSize) {
+                bitmap = Bitmap.createScaledBitmap(bitmap, (int) (width / bitmapRatio), (int) (height / bitmapRatio), true);
+            }
+
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 80, baos); // Comprimir la imagen antes de convertirla a Base64
+            byte[] imageBytes = baos.toByteArray();
+            return Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     private String obtenerIdCategoria(String categoria) {
@@ -197,7 +230,6 @@ public class nuevarecetaFragment extends Fragment {
                 return "9";
             case "Bocaditos":
                 return "10";
-
             default:
                 return "0";
         }
@@ -215,6 +247,7 @@ public class nuevarecetaFragment extends Fragment {
         etIngredientes.setText("");
         etPreparacion.setText("");
         spinnerCategoria.setSelection(0);
+        spinnerDepartamento.setSelection(0);
         etNombreReceta.requestFocus();
 
         if (selectedImageUri != null) {

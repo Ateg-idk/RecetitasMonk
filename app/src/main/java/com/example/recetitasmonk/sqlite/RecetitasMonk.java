@@ -1,16 +1,26 @@
 package com.example.recetitasmonk.sqlite;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class RecetitasMonk extends SQLiteOpenHelper {
     private static final String nameDB = "RecetitasMonk.db";
-    private static final int versionBD = 1;
+    private static final int versionBD = 4;
     private static final String createTableUsuario = "create table if not exists Usuario (id integer, correo varchar(255), clave varchar(255));";
     private static final String createTablePublicacion = "create table if not exists Publicacion (id INTEGER PRIMARY KEY AUTOINCREMENT,nombrepl varchar(255),ingredientes varchar(255),preparacion varchar(255));";
+    private static final String createTableHistorial = "CREATE TABLE IF NOT EXISTS Historial (id INTEGER PRIMARY KEY AUTOINCREMENT, terminoBusqueda VARCHAR(255), fecha TEXT)";
+
+    private static final String dropTableHistorial = "drop table if exists Historial";
     private static final String dropTableUsuario = "drop table if exists Usuario";
     private static final String dropTablePublicacion = "drop table if exists Publicacion";
     public RecetitasMonk(@Nullable Context context) {
@@ -21,6 +31,7 @@ public class RecetitasMonk extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(createTableUsuario);
         db.execSQL(createTablePublicacion);
+        db.execSQL(createTableHistorial);
     }
 
     @Override
@@ -30,6 +41,9 @@ public class RecetitasMonk extends SQLiteOpenHelper {
 
         db.execSQL(dropTablePublicacion);
         db.execSQL(createTablePublicacion);
+
+        db.execSQL(dropTableHistorial);
+        db.execSQL(createTableHistorial);
 
     }
 
@@ -86,6 +100,32 @@ public class RecetitasMonk extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         if(db != null){
             db.execSQL("update Usuario set "+llave+" = '"+valor+"' where id = "+id+";");
+            db.close();
+            return true;
+        }
+        return false;
+    }
+    private String getCurrentDate() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+        return sdf.format(new Date());
+    }
+    public boolean agregarHistorial(String terminoBusqueda) {
+        SQLiteDatabase db = getWritableDatabase();
+        if (db != null) {
+            ContentValues values = new ContentValues();
+            values.put("terminoBusqueda", terminoBusqueda);
+            values.put("fecha", getCurrentDate());
+            long result = db.insert("Historial", null, values);
+            db.close();
+            Log.d("RecetitasMonk", "Historial agregado: " + terminoBusqueda);  // Agrega este log
+            return result != -1;  // Retorna true si la inserción fue exitosa
+        }
+        return false;
+    }
+    public boolean eliminarTablaHistorial() {
+        SQLiteDatabase db = getWritableDatabase();
+        if (db != null) {
+            db.execSQL("drop table if exists Historial");
             db.close();
             return true;
         }

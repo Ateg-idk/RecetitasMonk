@@ -6,17 +6,10 @@
             android:icon="@drawable/nav_new_receta"
             android:title="Nueva Receta"/>
         <item
-            android:id="@+id/nav_misRecetas"
-            android:icon="@drawable/nav_mis_recetas"
-            android:title="Mis Recetas"/>
-        <item
-            android:id="@+id/nav_menuSemana"
-            android:icon="@drawable/nav_mis_recetas"
-            android:title="Menu Semana"/>
-        <item
-            android:id="@+id/nav_editarPerfil"
-            android:icon="@drawable/nav_editar_perfil"
-            android:title="Editar Perfil"/>
+            android:id="@+id/nav_Buscar"
+            android:icon="@drawable/search"
+            android:title="Buscar"/>
+
         <item
             android:id="@+id/nav_cerrarSesion"
             android:icon="@drawable/nav_cerrar_sesion"

@@ -36,6 +36,7 @@ public class CategoriasFragment extends Fragment implements View.OnClickListener
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -97,7 +98,7 @@ public class CategoriasFragment extends Fragment implements View.OnClickListener
         lista = new ArrayList<>();
         GridLayoutManager manager = new GridLayoutManager(getContext(), 2);
         recCategorias.setLayoutManager(manager);
-        adapter = new CategoriaAdapter(lista);
+        adapter = new CategoriaAdapter(lista, getContext());
         recCategorias.setAdapter(adapter);
 
         mostrarCategorias();

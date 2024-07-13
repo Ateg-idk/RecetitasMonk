@@ -21,6 +21,7 @@
 
             android:src="@drawable/perfil_nav"/>
         <TextView
+            android:id="@+id/monbreML"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Monin"

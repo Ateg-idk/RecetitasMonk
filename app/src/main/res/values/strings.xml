@@ -52,6 +52,9 @@ Preparacion
     <string name="categoria">
 Categoria
 </string>
+    <string name="departamento">
+Departamento
+</string>
     <!-- strings.xml -->
     <string name="label">
 Pick an option
@@ -80,7 +83,7 @@ Pick an option
         2. Uso de la Aplicación
         - Registro: Debes registrarte para usar ciertas funcionalidades de la app. Proporciona información veraz y completa durante el registro.
         - Contenido del Usuario: Eres responsable del contenido que subas. No debes subir contenido que sea ofensivo, ilegal o que infrinja derechos de terceros.
-        - Derechos de Uso: Concedes a Recetitas Monk el derecho de usar, distribuir y mostrar el contenido que subas.
+        - Derechos de Uso: Esta aplicación permite a los usuarios compartir y subir sus propias recetas. Al hacerlo, los usuarios conceden a la aplicación el derecho de utilizar, modificar y distribuir las recetas con el propósito de operar y mejorar nuestros servicios.
         \n\n
         3. Privacidad
         Nuestra política de privacidad explica cómo recopilamos, usamos y compartimos tu información personal. Al usar la app, aceptas nuestra política de privacidad.
@@ -95,7 +98,10 @@ Pick an option
         Recetitas Monk se reserva el derecho de modificar estos términos en cualquier momento. Te notificaremos sobre cualquier cambio material a través de la app.
         \n\n
         7. Ley Aplicable
-        Estos términos se regirán e interpretarán de acuerdo con las leyes.
+        Nos comprometemos a cumplir con la Ley 29733, Ley de Protección de Datos Personales, y su reglamento. Los datos personales que recopilemos serán tratados con estricta confidencialidad y solo serán utilizados para los fines específicos de nuestra aplicación.
+        Al registrarte y utilizar nuestros servicios, aceptas que tus datos personales sean recopilados, almacenados y utilizados de acuerdo con nuestra política de privacidad.
+        Nos comprometemos a seguir los lineamientos establecidos por la Ley 31315 para promover la seguridad alimentaria y nutricional.
+
         \n\n
         8. Contacto
         Para cualquier pregunta sobre estos términos, puedes contactarnos al número 908611017.
@@ -111,5 +117,35 @@ Nombre de la receta
     <string name="autor">
 Autor
 </string>
+    <string-array name="departamentos_array">
+        <item>Amazonas</item>
+        <item>Áncash</item>
+        <item>Apurímac</item>
+        <item>Arequipa</item>
+        <item>Ayacucho</item>
+        <item>Cajamarca</item>
+        <item>Callao</item>
+        <item>Cusco</item>
+        <item>Huancavelica</item>
+        <item>Huánuco</item>
+        <item>Ica</item>
+        <item>Junín</item>
+        <item>La Libertad</item>
+        <item>Lambayeque</item>
+        <item>Lima</item>
+        <item>Loreto</item>
+        <item>Madre de Dios</item>
+        <item>Moquegua</item>
+        <item>Pasco</item>
+        <item>Piura</item>
+        <item>Puno</item>
+        <item>San Martín</item>
+        <item>Tacna</item>
+        <item>Tumbes</item>
+        <item>Ucayali</item>
+    </string-array>
+
+    //mostrar datos
+    <string name="itcLblnombreUser">NombreUser</string>
 
 </resources>

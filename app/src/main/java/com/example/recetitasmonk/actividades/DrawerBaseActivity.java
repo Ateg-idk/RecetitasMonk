@@ -15,8 +15,10 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.recetitasmonk.R;
+import com.example.recetitasmonk.clases.Cliente;
 import com.example.recetitasmonk.clases.Inicio;
 import com.example.recetitasmonk.fragmentos.CategoriasFragment;
+import com.example.recetitasmonk.fragmentos.MapFragment;
 import com.example.recetitasmonk.fragmentos.busquedaFragment;
 import com.example.recetitasmonk.fragmentos.ininFragment;
 import com.example.recetitasmonk.fragmentos.nuevarecetaFragment;
@@ -26,6 +28,8 @@ import com.google.android.material.navigation.NavigationView;
 
 public class DrawerBaseActivity extends AppCompatActivity implements Inicio {
 
+    Cliente cliente ;
+
 
     Fragment [] fragments;
     @Override
@@ -33,14 +37,17 @@ public class DrawerBaseActivity extends AppCompatActivity implements Inicio {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer_base);
 
-        fragments = new Fragment[4];
+        fragments = new Fragment[5];
         fragments [0] = new ininFragment();
         fragments [1] = new CategoriasFragment();
         fragments [2] = new nuevarecetaFragment();
         fragments [3] = new user1Fragment();
+        fragments [4] = new MapFragment();
 
         int idBoton = getIntent().getIntExtra("idBoton", -1);
         onClickInicio(idBoton);
+
+        cliente = (Cliente) getIntent().getSerializableExtra("cliente");
 
     }
     @Override

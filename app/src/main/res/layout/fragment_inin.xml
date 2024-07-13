@@ -52,6 +52,7 @@
             android:orientation="vertical">
 
 
+
             <!-- Tus elementos para la categoría aquí -->
             <TextView
                 android:layout_width="match_parent"
@@ -60,11 +61,13 @@
                 android:textColor="@color/black"
                 android:textSize="28sp"
                 android:textStyle="bold" />
-
-            <androidx.recyclerview.widget.RecyclerView
+            <!-- Imagen "Recetas más vistas" -->
+            <ImageView
+                android:id="@+id/image_10"
                 android:layout_width="match_parent"
-                android:layout_height="96dp"
-                android:layout_marginTop="20dp" />
+                android:layout_height="208dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/desayno" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -77,6 +80,7 @@
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerVista"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp" />
