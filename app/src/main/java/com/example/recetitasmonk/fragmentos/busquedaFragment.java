@@ -27,11 +27,13 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.BaseJsonHttpResponseHandler;
 import org.json.JSONArray;
 import org.json.JSONException;
-
+import android.widget.EditText;
 import java.util.ArrayList;
 
 import android.util.Log;
 import android.widget.SearchView;
+import android.widget.TextView;
+
 import com.example.recetitasmonk.sqlite.RecetitasMonk;
 import com.example.recetitasmonk.adaptadores.ResultadoAdapter;
 import java.util.ArrayList;
@@ -80,11 +82,14 @@ public class busquedaFragment extends Fragment implements View.OnClickListener ,
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
     final static String urlMostrarResultados = "http://recetitasmonk.atwebpages.com/servicios/mostrarBusqueda.php";
     Fragment[] fragments;
@@ -114,7 +119,7 @@ public class busquedaFragment extends Fragment implements View.OnClickListener ,
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         recResultados.setLayoutManager(manager);
 
-        adapter = new ResultadoAdapter(listaResultado);
+        adapter = new ResultadoAdapter(listaResultado,this.getContext());
         recResultados.setAdapter(adapter);
 
 
@@ -124,7 +129,7 @@ public class busquedaFragment extends Fragment implements View.OnClickListener ,
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-
+                Log.d("ininFragment", "Guardando búsqueda: " + query);
                 try {
                     Log.d("ininFragment", "Guardando búsqueda: " + query);
                     boolean guardadoExitoso = dbHelper.agregarHistorial(query);
@@ -141,6 +146,28 @@ public class busquedaFragment extends Fragment implements View.OnClickListener ,
                 return false;
             }
         });
+
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                // Aquí puedes manejar la acción de la tecla Enter
+                // Realiza alguna acción con el texto capturado
+
+                return true; // Indica que el evento ha sido manejado
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                // Aquí puedes manejar el cambio de texto mientras se escribe
+                Log.d("ininFragment", "Guardando búsqueda: ");
+                boolean guardadoExitoso = dbHelper.agregarHistorial(newText);
+                mostrarResultadosPorNombre(newText);
+                return false;
+            }
+        });
+
+
         mostrarResultados();
         return v;
     }
@@ -148,6 +175,47 @@ public class busquedaFragment extends Fragment implements View.OnClickListener ,
     private void mostrarResultados() {
         AsyncHttpClient ahcMostrarResultados = new AsyncHttpClient();
         ahcMostrarResultados.get(urlMostrarResultados, null, new BaseJsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, String rawJsonResponse, Object response) {
+                if(statusCode == 200){
+                    try {
+                        JSONArray jsonArray = new JSONArray(rawJsonResponse);
+                        listaResultado.clear();
+                        for (int i = 0; i < jsonArray.length(); i++){
+                            listaResultado.add(new Resultado(jsonArray.getJSONObject(i).getInt("idRecetas"),
+                                    jsonArray.getJSONObject(i).getString("nombreReceta"),
+                                    jsonArray.getJSONObject(i).getString("ingredientes"),
+                                    "",
+                                    jsonArray.getJSONObject(i).getString("imagen"),
+                                    jsonArray.getJSONObject(i).getString("departamento"),
+                                    jsonArray.getJSONObject(i).getInt("idUsuarios"),
+                                    jsonArray.getJSONObject(i).getInt("idCategoria")
+                            ));
+                        }
+                        adapter.notifyDataSetChanged();
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, String rawJsonData, Object errorResponse) {
+
+            }
+
+            @Override
+            protected Object parseResponse(String rawJsonData, boolean isFailure) throws Throwable {
+                return null;
+            }
+        });
+    }
+
+    private void mostrarResultadosPorNombre(String nombre) {
+        AsyncHttpClient ahcMostrarResultados = new AsyncHttpClient();
+        String newUrlMostrarResultados = "http://recetitasmonk.atwebpages.com/servicios/mostrarReceta.php?nombre="+nombre;
+        Log.d("ininFragment", newUrlMostrarResultados);
+        ahcMostrarResultados.get(newUrlMostrarResultados, null, new BaseJsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, String rawJsonResponse, Object response) {
                 if(statusCode == 200){
@@ -183,6 +251,7 @@ public class busquedaFragment extends Fragment implements View.OnClickListener ,
             }
         });
     }
+
     @Override
     public void onClick(View v) {
 

@@ -1,6 +1,7 @@
 package com.example.recetitasmonk.adaptadores;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
@@ -15,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.recetitasmonk.R;
+import com.example.recetitasmonk.actividades.recetaActivity;
 import com.example.recetitasmonk.clases.Categoria;
 import com.example.recetitasmonk.clases.Resultado;
 
@@ -25,9 +27,10 @@ public class ResultadoAdapter extends RecyclerView.Adapter<ResultadoAdapter.View
     private List<Resultado> listaResultado;
     private Context context;
     private int idResultado = -1;
-
-    public ResultadoAdapter(List<Resultado> listaResultado) {
+    private static final String TAG = "MainActivity";
+    public ResultadoAdapter(List<Resultado> listaResultado,Context context) {
         this.listaResultado = listaResultado;
+        this.context = context;
     }
 
     @NonNull
@@ -55,6 +58,22 @@ public class ResultadoAdapter extends RecyclerView.Adapter<ResultadoAdapter.View
             Log.d("RecetaAdapter", "No se encontró imagen en Base64, cargando placeholder.");
             holder.imagen.setImageResource(R.drawable.desayno);
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Log.d(TAG, resultado.getPreparacion() + "");
+                Intent intent = new Intent(context, recetaActivity.class);
+                //intent.putExtra("idCategoria", resultado.getIdCategoria());
+                intent.putExtra("idReceta", resultado.getIdRecetas());
+                intent.putExtra("nombreReceta", resultado.getNombreReceta());
+                intent.putExtra("ingredientes", resultado.getIngredientes());
+                intent.putExtra("preparacion", resultado.getPreparacion());
+
+                context.startActivity(intent);
+            }
+        });
     }
     @Override
     public int getItemCount() {

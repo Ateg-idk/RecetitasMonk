@@ -131,8 +131,8 @@ public class ininFragment extends Fragment implements NavigationView.OnNavigatio
                             listaReceta.add(new Receta(
                                     jsonArray.getJSONObject(i).getInt("idRecetas"),
                                     jsonArray.getJSONObject(i).getString("nombreReceta"),
-                                    jsonArray.getJSONObject(i).getString("ingredientes"),
-                                    jsonArray.getJSONObject(i).getString("preparacion"),
+                                    jsonArray.getJSONObject(i).getString("departamento"),
+                                    "",
                                     jsonArray.getJSONObject(i).getString("imagen"),
                                     jsonArray.getJSONObject(i).getString("departamento"),
                                     jsonArray.getJSONObject(i).getInt("idUsuarios"),

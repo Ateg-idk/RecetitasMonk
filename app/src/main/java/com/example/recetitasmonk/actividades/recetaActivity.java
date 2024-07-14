@@ -46,13 +46,13 @@ public class recetaActivity extends AppCompatActivity implements View.OnClickLis
         String nombreReceta = intent.getStringExtra("nombreReceta");
         String ingrediente = intent.getStringExtra("ingredientes");
         String preparacion = intent.getStringExtra("preparacion");
-        Integer idReceta = intent.getIntExtra("idReceta",0);
+        Integer idRecegit merta = intent.getIntExtra("idReceta",0);
         //String foto = intent.getStringExtra("foto");
         atras = findViewById(R.id.backButton);
         atras.setOnClickListener(this);
         txtNombreReceta.setText(nombreReceta);
-        txtIngredientes.setText(ingrediente);
-        txtPreparacion.setText(preparacion);
+        //txtIngredientes.setText(ingrediente);
+        //txtPreparacion.setText(preparacion);
 
         obtenerImagenReceta(idReceta);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
