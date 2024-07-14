@@ -70,16 +70,16 @@
                 android:textAppearance="@style/preparacion"
                 android:paddingBottom="8dp" />
 
-                <EditText
-                    android:id="@+id/rectangle_4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/rectangle_2"
-                    android:gravity="top"
-                    android:inputType="textMultiLine"
-                    android:lines="5"
-                    android:minLines="5"
-                    android:scrollbars="vertical" />
+            <EditText
+                android:id="@+id/rectangle_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_2"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:minLines="5"
+                android:scrollbars="vertical" />
 
             <TextView
                 android:id="@+id/categoria"
@@ -115,7 +115,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Publicar" />
+                android:text="@string/frmBtnpubli"
+                android:textAllCaps="false"/>
 
         </LinearLayout>
     </ScrollView>

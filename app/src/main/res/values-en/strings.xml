@@ -1,8 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+
+
+
+
+    <string-array name="categorias_array">
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Christmas</item>
+        <item>Salads</item>
+        <item>Drinks</item>
+        <item>Breads</item>
+        <item>Food for children</item>
+        <item>Soups</item>
+        <item>Healthy</item>
+        <item>Snacks</item>
+    </string-array>
+    <!-- Términos y Condiciones -->
+
+    <string name="terms_conditions">"         <![CDATA[         Bienvenido a Recetitas Monk. Al usar nuestra aplicación, aceptas cumplir con los siguientes términos y condiciones:         \n\n         1. Aceptación de los Términos         Al acceder y utilizar Recetitas Monk, aceptas estar sujeto a estos términos y condiciones. Si no estás de acuerdo con alguna parte de estos términos, no debes usar la aplicación.         \n\n         2. Uso de la Aplicación         - Registro: Debes registrarte para usar ciertas funcionalidades de la app. Proporciona información veraz y completa durante el registro.         - Contenido del Usuario: Eres responsable del contenido que subas. No debes subir contenido que sea ofensivo, ilegal o que infrinja derechos de terceros.         - Derechos de Uso: Esta aplicación permite a los usuarios compartir y subir sus propias recetas. Al hacerlo, los usuarios conceden a la aplicación el derecho de utilizar, modificar y distribuir las recetas con el propósito de operar y mejorar nuestros servicios.         \n\n         3. Privacidad         Nuestra política de privacidad explica cómo recopilamos, usamos y compartimos tu información personal. Al usar la app, aceptas nuestra política de privacidad.         \n\n         4. Propiedad Intelectual         Todo el contenido y software en la app es propiedad de Recetitas Monk o de sus licenciantes y está protegido por leyes de propiedad intelectual.         \n\n         5. Limitación de Responsabilidad         Recetitas Monk no será responsable de ningún daño indirecto, incidental, especial o consecuente que surja del uso de la aplicación.         \n\n         6. Modificaciones de los Términos         Recetitas Monk se reserva el derecho de modificar estos términos en cualquier momento. Te notificaremos sobre cualquier cambio material a través de la app.         \n\n         7. Ley Aplicable         Nos comprometemos a cumplir con la Ley 29733, Ley de Protección de Datos Personales, y su reglamento. Los datos personales que recopilemos serán tratados con estricta confidencialidad y solo serán utilizados para los fines específicos de nuestra aplicación.         Al registrarte y utilizar nuestros servicios, aceptas que tus datos personales sean recopilados, almacenados y utilizados de acuerdo con nuestra política de privacidad.         Nos comprometemos a seguir los lineamientos establecidos por la Ley 31315 para promover la seguridad alimentaria y nutricional.          \n\n         8. Contacto         Para cualquier pregunta sobre estos términos, puedes contactarnos al número 908611017.         ]]>     "</string>
+
+    Mis Recetas
+
+
+
+
+
     <string name="app_name">Monkey</string>
     <string name="frgCfgLblPreferencias">Lenguage</string>
     <string name="frgCfgBtnGuardar">Save</string>
     <string name="frmBtnCerrarses">Close Sesion</string>
     <string name="TxtOtro">Other</string>
+    <string name="logTxtCorreo">Mail</string>
+    <string name="logTxtClave">Clue</string>
+    <string name="logChkRecordar">Remember Session</string>
+    <string name="logBtnIniciar">Start</string>
+    <string name="logBtnSalir">Exit</string>
+    <string name="logLblRegistrar">Sign up</string>
+    <string name="logLblDerechos">Copy Right Recipes Monk 2024</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="itcLblNombreplato">Food name</string>
+    <string name="itcLbluser">Recipe creator</string>
+    <string name="bieLblSaludo">Welcome</string>
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
+    <string name="frgCfgLblBienvenida">Welcome</string>
+    <string name="frgCfgLbluse">User</string>
+    <string name="frgCfgLblcampo">Obligatory field</string>
+    <string name="frgCfgLblcontr">Password</string>
+    <string name="frgCfgLblobli">Obligatory field</string>
+    <string name="frgCfgLblRC">Remember password</string>
+    <string name="frgCfgBtninises">Log in</string>
+    <string name="frgCfgLblrg">Sign up</string>
+    <string name="frgCfgLblredes">Social networks</string>
+    <string name="frgCfgLblinc">Home</string>
+    <string name="frgCfgLblrv">Most viewed recipes</string>
+    <string name="frgCfgLblrr">Recent Recipes</string>
+    <string name="frgCfgLblperf">User profile</string>
+    <string name="frgCfgLblmisrece">My recipes</string>
+    <string name="frgCfgLblfavo">My favourites</string>
+    <string name="frgCfgLblPdP">Privacy Policy</string>
+    <string name="frgCfgLbltyc">Term and conditions</string>
+    <string name="frgCfgLblCS">Sign off</string>
+    <string name="frgCfgLblcate">Categories</string>
+    <string name="frgCfgLblagr">"Add Recipe "</string>
+    <string name="regTextNombres">Names</string>
+    <string name="regTextApelliP">Last name</string>
+    <string name="regTextApelliM">Mother\'s last name</string>
+    <string name="regTextDni">Document number</string>
+    <string name="regTextCelular">Cell phone</string>
+    <string name="regTextCorreo">Mail</string>
+    <string name="regTextCorreoContra">Password</string>
+    <string name="regRbtMasculino">Male</string>
+    <string name="regRbtFemenino">Female</string>
+    <string name="regBtnRegistrar">To register</string>
+    <string name="regBtnCancelar">Cancel</string>
+    <string name="agregar_rec">Add Recipes</string>
+    <string name="nombre_de_l">Recipe Name</string>
+    <string name="ingrediente">Ingredients</string>
+    <string name="preparacion">Preparation</string>
+    <string name="categoria">Category</string>
+    <string name="departamento">Department</string>
+    <string name="terms_conditions_title">Term and conditions</string>
+    <string name="diplay_25_s">My recipes</string>
+    <string name="nombre_de_la">Recipe name</string>
+    <string name="autor">Author</string>
+    <string name="frmBtnpubli">Post</string>
+    <string name="frmLblnomb">Name</string>
+    <string name="frmLblnom">name</string>
+    <string name="frmLblapel">Last name</string>
+    <string name="frmLblapes">last name</string>
+    <string name="frmLblelec">Email</string>
+    <string name="frmLblcorre">email</string>
+    <string name="frmLblpasss">Password</string>
+    <string name="frmLblcass">password</string>
+    <string name="frmBtned">Edit</string>
+    <string name="frmBtnaplic">Apply</string>
+    <string name="regTxtgener">Gender</string>
+    <string name="regTxtregtit">User register</string>
+    <string name="Txtcatex"> Categories </string>
+
+
 </resources>

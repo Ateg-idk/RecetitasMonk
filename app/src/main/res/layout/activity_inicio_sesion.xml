@@ -30,7 +30,7 @@
                 android:layout_height="53dp"
                 android:fontFamily="sans-serif-black"
                 android:onClick="onTextViewClick"
-                android:text="BIENVENIDO"
+                android:text="@string/frgCfgLblBienvenida"
                 android:textAlignment="center"
                 android:textColor="#FF6F00"
                 android:textSize="32sp"
@@ -49,7 +49,7 @@
                 app:counterEnabled="true"
                 app:endIconDrawable="@drawable/ic_listo"
                 app:endIconMode="custom"
-                app:helperText="CAMPO OBLIGATORIO"
+                app:helperText="@string/frgCfgLblcampo"
                 app:hintEnabled="true"
                 app:startIconDrawable="@drawable/ic_usuario">
 
@@ -58,7 +58,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:drawablePadding="8dp"
-                    android:hint="Usuario"
+                    android:hint="@string/frgCfgLbluse"
                     android:inputType="textEmailAddress"
                     android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
@@ -76,10 +76,10 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Contraseña"
+                android:hint="@string/frgCfgLblcontr"
                 app:counterEnabled="true"
                 app:endIconMode="password_toggle"
-                app:helperText="CAMPO OBLIGATORIO"
+                app:helperText="@string/frgCfgLblobli"
                 app:hintEnabled="true"
                 app:startIconDrawable="@drawable/ic_contr">
 
@@ -98,7 +98,7 @@
                 android:id="@+id/logChkRecordar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Recordar Contraseña"/>
+                android:text="@string/frgCfgLblRC"/>
 
 
             <RelativeLayout
@@ -118,9 +118,10 @@
                 android:background="@drawable/btn_azu"
                 android:backgroundTint="#FF6F00"
                 android:onClick="IniciarSesion"
-                android:text="Iniciar Sesión"
+                android:text="@string/frgCfgBtninises"
                 android:textStyle="bold"
-                app:cornerRadius="32dp" />
+                app:cornerRadius="32dp"
+                android:textAllCaps="false"/>
 
             <View
                 android:layout_width="wrap_content"
@@ -133,7 +134,7 @@
                 android:layout_gravity="center"
                 android:alpha="0.7"
                 android:fontFamily="sans-serif-black"
-                android:text="Registrate ahora"
+                android:text="@string/frgCfgLblrg"
                 android:textColor="@android:color/black"
                 android:textSize="20sp" />
 
@@ -147,7 +148,7 @@
                 android:layout_gravity="center"
                 android:alpha="0.7"
 
-                android:text="Redes Sociales"
+                android:text="@string/frgCfgLblredes"
                 android:textColor="@color/black" />
 
             <LinearLayout
