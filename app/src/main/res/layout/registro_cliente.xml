@@ -7,7 +7,6 @@
     android:background="@drawable/background"
     android:orientation="vertical">
 
-
     <TextView
         android:id="@+id/textViewReg"
         android:layout_width="match_parent"
@@ -15,7 +14,7 @@
         android:background="#AC1C1C"
         android:backgroundTint="#FF5722"
         android:gravity="center"
-        android:text="REGISTRO DE USUARIOS"
+        android:text="@string/regTxtregtit"
         android:textColor="#F6F5F5"
         android:textSize="24sp"
         tools:ignore="MissingConstraints"
@@ -31,6 +30,8 @@
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:orientation="vertical">
+
+
             <EditText
                 android:id="@+id/txtRegNombre"
                 android:layout_width="220dp"
@@ -81,8 +82,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#FF5722"
-                android:ems="8"
-                android:maxLength="8"
+                android:ems="10"
                 android:hint="@string/regTextDni"
                 android:inputType="number"
                 tools:ignore="MissingConstraints,TouchTargetSizeCheck"
@@ -95,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
                 android:gravity="center_horizontal"
-                android:text="Genero"
+                android:text="@string/regTxtgener"
                 android:textColor="#FF5722"
                 android:textSize="20sp"
                 tools:ignore="DuplicateIds" />
@@ -136,8 +136,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#FF5722"
-                android:ems="9"
-                android:maxLength="9"
+                android:ems="10"
                 android:hint="@string/regTextCelular"
                 android:inputType="number"
                 tools:ignore="MissingConstraints"
@@ -167,8 +166,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="15dp"
                 android:backgroundTint="#FF5722"
-                android:ems="7"
-                android:maxLength="7"
+                android:ems="10"
                 android:hint="@string/regTextCorreoContra"
                 android:inputType="textPassword"
                 android:minHeight="48dp"
@@ -189,6 +187,7 @@
                     android:backgroundTint="#FF5722"
                     android:onClick="registrar"
                     android:text="@string/regBtnRegistrar"
+                    android:textAllCaps="false"
                     android:layout_weight="1"/>
                 <Button
                     android:id="@+id/regbtnCancel"
@@ -199,6 +198,7 @@
                     android:layout_margin="20dp"
                     android:backgroundTint="#FF5722"
                     android:text="@string/regBtnCancelar"
+                    android:textAllCaps="false"
                     app:cornerRadius="0sp"
                     android:layout_weight="1"
                     tools:ignore="MissingConstraints,TouchTargetSizeCheck"
